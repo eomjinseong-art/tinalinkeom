@@ -47,7 +47,7 @@ function asPlainUrlParagraph(node: AstNode): { href: string; label: string } | n
   if (!kids.length || !kids.every(isSimpleText)) return null;
   const cleaned = astToText(node).replace(/\\:/g, ":").replace(/\\\./g, ".").trim();
   const match = cleaned.match(/^(.*?)\s+(https?:\/\/\S+)\s*$/);
-  if (!match) return null;
+  if (!match || /https?:\/\/\S+/.test(match[1])) return null;
   return { href: match[2], label: match[1].trim() || match[2] };
 }
 

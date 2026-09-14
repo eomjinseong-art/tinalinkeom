@@ -4,69 +4,40 @@ import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
 import "./App.css";
 
+type AstNode = {
+  type?: string;
+  text?: string;
+  bold?: boolean;
+  url?: string;
+  children?: AstNode[];
+};
+
 const load = ({ params }: LoaderFunctionArgs) =>
   client.queries.page({ relativePath: `${params.slug ?? "home"}.mdx` });
 
-function childrenToText(children: unknown): string {
-  if (children == null || typeof children === "boolean") return "";
-  if (typeof children === "string" || typeof children === "number") return String(children);
-  if (Array.isArray(children)) return children.map(childrenToText).join("");
-  if (typeof children === "object" && children !== null && "props" in children) {
-    return childrenToText((children as { props?: { children?: unknown } }).props?.children);
-  }
-  return "";
+function astToText(node: AstNode | AstNode[] | undefined): string {
+  if (!node) return "";
+  if (Array.isArray(node)) return node.map(astToText).join("");
+  if (typeof node.text === "string") return node.text;
+  return astToText(node.children);
 }
 
-function parseLinkParagraph(text: string): { label: string; href: string } | null {
-  const cleaned = text.replace(/\\:/g, ":").replace(/\\\./g, ".").replace(/→/g, "").trim();
-  const m = cleaned.match(/^(.*?)\s+(https?:\/\/\S+)\s*$/);
-  if (!m) return null;
-  return { label: m[1].trim(), href: m[2].trim() };
-}
-
-function isBoldNode(node: unknown): boolean {
-  if (typeof node !== "object" || node === null || !("type" in node)) return false;
-  const type = (node as { type?: unknown }).type;
-  if (type === "strong" || type === "b") return true;
-  if (typeof type === "function") {
-    const name = (type as { displayName?: string; name?: string }).displayName || (type as { name?: string }).name;
-    return /bold/i.test(name || "");
-  }
-  return false;
-}
-
-function isHeadingParagraph(children: unknown): boolean {
-  const list = Array.isArray(children) ? children : [children];
-  const meaningful = list.filter((child) => childrenToText(child).trim().length > 0);
-  return meaningful.length > 0 && meaningful.every(isBoldNode);
-}
-
-function findAnchorChild(children: unknown): { href: string; text: string } | null {
-  const list = Array.isArray(children) ? children : children != null ? [children] : [];
-  for (const child of list) {
-    if (typeof child !== "object" || child === null || !("props" in child)) continue;
-    const props = (child as { props?: { href?: string; url?: string; children?: unknown } }).props;
-    const href = props?.href || props?.url;
-    if (typeof href === "string" && href) {
-      return { href, text: childrenToText(props?.children) };
+function findUrl(node: AstNode | AstNode[] | undefined): string | null {
+  if (!node) return null;
+  if (Array.isArray(node)) {
+    for (const child of node) {
+      const url = findUrl(child);
+      if (url) return url;
     }
-    const nested = findAnchorChild(props?.children);
-    if (nested) return nested;
+    return null;
   }
-  return null;
+  if (node.type === "a" && node.url) return node.url;
+  return findUrl(node.children);
 }
 
-function siblingLabel(children: unknown): string {
-  const list = Array.isArray(children) ? children : children != null ? [children] : [];
-  return list
-    .filter((child) => {
-      if (typeof child !== "object" || child === null || !("props" in child)) return true;
-      const props = (child as { props?: { href?: string; url?: string } }).props;
-      return !(props?.href || props?.url);
-    })
-    .map(childrenToText)
-    .join("")
-    .trim();
+function isBoldHeading(node: AstNode): boolean {
+  const kids = (node.children ?? []).filter((child) => astToText(child).trim());
+  return kids.length > 0 && kids.every((child) => Boolean(child.bold));
 }
 
 function LinkCard({ href, label }: { href: string; label: string }) {
@@ -84,32 +55,55 @@ const markdownComponents: Components<{}> = {
   h1: (props) => <h2 className="section-title">{props?.children}</h2>,
   h2: (props) => <h2 className="section-title">{props?.children}</h2>,
   h3: (props) => <h2 className="section-title">{props?.children}</h2>,
-  bold: (props) => <strong>{props?.children}</strong>,
-  p: (props) => {
-    const text = childrenToText(props?.children);
-    const fromText = parseLinkParagraph(text);
-    if (fromText) {
-      return <LinkCard href={fromText.href} label={fromText.label} />;
-    }
-
-    const fromChild = findAnchorChild(props?.children);
-    if (fromChild) {
-      const label = siblingLabel(props?.children) || fromChild.text || fromChild.href;
-      return <LinkCard href={fromChild.href} label={label} />;
-    }
-
-    if (!text.trim()) return null;
-    if (isHeadingParagraph(props?.children)) {
-      return <h2 className="section-title">{text}</h2>;
-    }
-    return <p className="body-text">{props?.children}</p>;
-  },
+  bold: (props) => <h2 className="section-title">{props?.children}</h2>,
   a: (props) => (
-    <a href={props?.url} target="_blank" rel="noopener noreferrer">
-      {props?.children || props?.url}
+    <a className="link-card" href={props?.url} target="_blank" rel="noopener noreferrer">
+      <span className="link-label">{props?.children || props?.url}</span>
+      <span className="link-arrow" aria-hidden="true">
+        →
+      </span>
     </a>
   ),
 };
+
+function BioContent({ body }: { body: AstNode | null | undefined }) {
+  const nodes = Array.isArray(body) ? body : body?.children;
+  if (!nodes?.length) {
+    return <TinaMarkdown content={body as never} components={markdownComponents} />;
+  }
+
+  return (
+    <>
+      {nodes.map((node, index) => {
+        if (node.type && /^h[1-6]$/.test(node.type)) {
+          return (
+            <h2 key={index} className="section-title">
+              {astToText(node)}
+            </h2>
+          );
+        }
+
+        if (node.type === "p") {
+          const href = findUrl(node);
+          const text = astToText(node).replace(/\\:/g, ":").replace(/\\\./g, ".").trim();
+          if (href) {
+            const label = text.replace(href, "").trim() || href;
+            return <LinkCard key={index} href={href} label={label} />;
+          }
+          if (isBoldHeading(node) && text) {
+            return (
+              <h2 key={index} className="section-title">
+                {text}
+              </h2>
+            );
+          }
+        }
+
+        return <TinaMarkdown key={index} content={[node] as never} components={markdownComponents} />;
+      })}
+    </>
+  );
+}
 
 function Page() {
   const { slug } = useParams();
@@ -127,7 +121,7 @@ function Page() {
           {!isAbout && <p className="hero-sub">프로젝트 · 블로그 · 유튜브 모음</p>}
         </header>
         <main className="content" data-tina-field={tinaField(data.page, "body")}>
-          <TinaMarkdown content={data.page.body} components={markdownComponents} />
+          <BioContent body={data.page.body} />
         </main>
       </div>
       <footer className="footer">

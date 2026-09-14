@@ -1,23 +1,76 @@
 import { createBrowserRouter, RouterProvider, Link, useLoaderData, type LoaderFunctionArgs } from "react-router-dom";
-import { TinaMarkdown } from "tinacms/dist/rich-text";
+import { TinaMarkdown, type Components } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
+import "./App.css";
 
 const load = ({ params }: LoaderFunctionArgs) =>
   client.queries.page({ relativePath: `${params.slug ?? "home"}.mdx` });
 
+function childrenToText(children: unknown): string {
+  if (children == null || typeof children === "boolean") return "";
+  if (typeof children === "string" || typeof children === "number") return String(children);
+  if (Array.isArray(children)) return children.map(childrenToText).join("");
+  if (typeof children === "object" && children !== null && "props" in children) {
+    return childrenToText((children as { props?: { children?: unknown } }).props?.children);
+  }
+  return "";
+}
+
+function parseLinkParagraph(text: string): { label: string; href: string } | null {
+  const cleaned = text.replace(/\\:/g, ":").replace(/\\\./g, ".").trim();
+  const m = cleaned.match(/^(.*?)\s+(https?:\/\/\S+)\s*$/);
+  if (!m) return null;
+  return { label: m[1].trim(), href: m[2].trim() };
+}
+
+const markdownComponents: Components<{}> = {
+  h1: (props) => <h2 className="section-title">{props?.children}</h2>,
+  h2: (props) => <h2 className="section-title">{props?.children}</h2>,
+  h3: (props) => <h2 className="section-title">{props?.children}</h2>,
+  bold: (props) => <h2 className="section-title">{props?.children}</h2>,
+  p: (props) => {
+    const text = childrenToText(props?.children);
+    const link = parseLinkParagraph(text);
+    if (link) {
+      return (
+        <a className="link-card" href={link.href} target="_blank" rel="noopener noreferrer">
+          <span className="link-label">{link.label}</span>
+          <span className="link-arrow" aria-hidden="true">→</span>
+        </a>
+      );
+    }
+    if (!text.trim()) return null;
+    return <p className="body-text">{props?.children}</p>;
+  },
+  a: (props) => (
+    <a className="link-card" href={props?.url} target="_blank" rel="noopener noreferrer">
+      <span className="link-label">{props?.children || props?.url}</span>
+      <span className="link-arrow" aria-hidden="true">→</span>
+    </a>
+  ),
+};
+
 function Page() {
   const { data } = useTina(useLoaderData() as Awaited<ReturnType<typeof load>>);
   return (
-    <>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link> |{" "}
-        <a href="/admin/index.html">Admin</a>
-      </nav>
-      <main data-tina-field={tinaField(data.page, "body")}>
-        <TinaMarkdown content={data.page.body} />
+    <div className="page-shell">
+      <header className="hero">
+        <div className="avatar" aria-hidden="true">🔗</div>
+        <h1 className="hero-title">Links</h1>
+        <p className="hero-sub">프로젝트 · 블로그 · 유튜브 모음</p>
+      </header>
+      <main className="content" data-tina-field={tinaField(data.page, "body")}>
+        <TinaMarkdown content={data.page.body} components={markdownComponents} />
       </main>
-    </>
+      <footer className="footer">
+        <Link to="/">Home</Link>
+        <span>·</span>
+        <Link to="/about">About</Link>
+        <span>·</span>
+        <a href="/admin/index.html">Admin</a>
+      </footer>
+    </div>
   );
 }
 

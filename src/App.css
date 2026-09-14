@@ -173,6 +173,11 @@ body {
   word-break: keep-all;
 }
 
+.body-text a {
+  color: var(--accent);
+  text-underline-offset: 0.15em;
+}
+
 .footer {
   display: flex;
   align-items: center;

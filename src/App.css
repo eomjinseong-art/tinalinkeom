@@ -100,13 +100,12 @@ body {
 }
 
 .section-title {
-  margin: 1.35rem 0 0.55rem;
-  padding: 0 0.2rem;
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  margin: 1.45rem 0 0.55rem;
+  padding: 0 0.25rem;
+  color: var(--ink);
+  font-size: 0.95rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
 }
 
 .section-title:first-child {

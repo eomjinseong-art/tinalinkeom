@@ -18,7 +18,7 @@ function childrenToText(children: unknown): string {
 }
 
 function parseLinkParagraph(text: string): { label: string; href: string } | null {
-  const cleaned = text.replace(/\\:/g, ":").replace(/\\\./g, ".").trim();
+  const cleaned = text.replace(/\\:/g, ":").replace(/\\\./g, ".").replace(/→/g, "").trim();
   const m = cleaned.match(/^(.*?)\s+(https?:\/\/\S+)\s*$/);
   if (!m) return null;
   return { label: m[1].trim(), href: m[2].trim() };
@@ -41,6 +41,45 @@ function isHeadingParagraph(children: unknown): boolean {
   return meaningful.length > 0 && meaningful.every(isBoldNode);
 }
 
+function findAnchorChild(children: unknown): { href: string; text: string } | null {
+  const list = Array.isArray(children) ? children : children != null ? [children] : [];
+  for (const child of list) {
+    if (typeof child !== "object" || child === null || !("props" in child)) continue;
+    const props = (child as { props?: { href?: string; url?: string; children?: unknown } }).props;
+    const href = props?.href || props?.url;
+    if (typeof href === "string" && href) {
+      return { href, text: childrenToText(props?.children) };
+    }
+    const nested = findAnchorChild(props?.children);
+    if (nested) return nested;
+  }
+  return null;
+}
+
+function siblingLabel(children: unknown): string {
+  const list = Array.isArray(children) ? children : children != null ? [children] : [];
+  return list
+    .filter((child) => {
+      if (typeof child !== "object" || child === null || !("props" in child)) return true;
+      const props = (child as { props?: { href?: string; url?: string } }).props;
+      return !(props?.href || props?.url);
+    })
+    .map(childrenToText)
+    .join("")
+    .trim();
+}
+
+function LinkCard({ href, label }: { href: string; label: string }) {
+  return (
+    <a className="link-card" href={href} target="_blank" rel="noopener noreferrer">
+      <span className="link-label">{label}</span>
+      <span className="link-arrow" aria-hidden="true">
+        →
+      </span>
+    </a>
+  );
+}
+
 const markdownComponents: Components<{}> = {
   h1: (props) => <h2 className="section-title">{props?.children}</h2>,
   h2: (props) => <h2 className="section-title">{props?.children}</h2>,
@@ -48,17 +87,17 @@ const markdownComponents: Components<{}> = {
   bold: (props) => <strong>{props?.children}</strong>,
   p: (props) => {
     const text = childrenToText(props?.children);
-    const link = parseLinkParagraph(text);
-    if (link) {
-      return (
-        <a className="link-card" href={link.href} target="_blank" rel="noopener noreferrer">
-          <span className="link-label">{link.label}</span>
-          <span className="link-arrow" aria-hidden="true">
-            →
-          </span>
-        </a>
-      );
+    const fromText = parseLinkParagraph(text);
+    if (fromText) {
+      return <LinkCard href={fromText.href} label={fromText.label} />;
     }
+
+    const fromChild = findAnchorChild(props?.children);
+    if (fromChild) {
+      const label = siblingLabel(props?.children) || fromChild.text || fromChild.href;
+      return <LinkCard href={fromChild.href} label={label} />;
+    }
+
     if (!text.trim()) return null;
     if (isHeadingParagraph(props?.children)) {
       return <h2 className="section-title">{text}</h2>;
@@ -66,11 +105,8 @@ const markdownComponents: Components<{}> = {
     return <p className="body-text">{props?.children}</p>;
   },
   a: (props) => (
-    <a className="link-card" href={props?.url} target="_blank" rel="noopener noreferrer">
-      <span className="link-label">{props?.children || props?.url}</span>
-      <span className="link-arrow" aria-hidden="true">
-        →
-      </span>
+    <a href={props?.url} target="_blank" rel="noopener noreferrer">
+      {props?.children || props?.url}
     </a>
   ),
 };

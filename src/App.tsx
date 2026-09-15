@@ -23,22 +23,38 @@ function astToText(node: AstNode | AstNode[] | undefined): string {
   return astToText(node.children);
 }
 
-function findUrl(node: AstNode | AstNode[] | undefined): string | null {
-  if (!node) return null;
-  if (Array.isArray(node)) {
-    for (const child of node) {
-      const url = findUrl(child);
-      if (url) return url;
-    }
-    return null;
-  }
-  if (node.type === "a" && node.url) return node.url;
-  return findUrl(node.children);
+function isSimpleText(node: AstNode): boolean {
+  return node.type === "text" || (typeof node.text === "string" && !node.type);
+}
+
+function asLinkCard(node: AstNode): { href: string; label: string } | null {
+  const kids = node.children ?? [];
+  const links = kids.filter((child) => child.type === "a" && child.url);
+  if (links.length !== 1) return null;
+  if (!kids.every((child) => child.type === "a" || isSimpleText(child))) return null;
+  const href = links[0].url!;
+  const label = kids
+    .filter((child) => child.type !== "a")
+    .map(astToText)
+    .join("")
+    .replace(/\\:/g, ":")
+    .replace(/\\\./g, ".")
+    .trim();
+  return { href, label: label || astToText(links[0]).trim() || href };
+}
+
+function asPlainUrlParagraph(node: AstNode): { href: string; label: string } | null {
+  const kids = node.children ?? [];
+  if (!kids.length || !kids.every(isSimpleText)) return null;
+  const cleaned = astToText(node).replace(/\\:/g, ":").replace(/\\\./g, ".").trim();
+  const match = cleaned.match(/^(.*?)\s+(https?:\/\/\S+)\s*$/);
+  if (!match || /https?:\/\/\S+/.test(match[1])) return null;
+  return { href: match[2], label: match[1].trim() || match[2] };
 }
 
 function isBoldHeading(node: AstNode): boolean {
   const kids = (node.children ?? []).filter((child) => astToText(child).trim());
-  return kids.length > 0 && kids.every((child) => Boolean(child.bold));
+  return kids.length > 0 && kids.every((child) => Boolean(child.bold) && isSimpleText(child));
 }
 
 function LinkCard({ href, label }: { href: string; label: string }) {
@@ -56,13 +72,10 @@ const markdownComponents: Components<{}> = {
   h1: (props) => <h2 className="section-title">{props?.children}</h2>,
   h2: (props) => <h2 className="section-title">{props?.children}</h2>,
   h3: (props) => <h2 className="section-title">{props?.children}</h2>,
-  bold: (props) => <h2 className="section-title">{props?.children}</h2>,
+  bold: (props) => <strong>{props?.children}</strong>,
   a: (props) => (
-    <a className="link-card" href={props?.url} target="_blank" rel="noopener noreferrer">
-      <span className="link-label">{props?.children || props?.url}</span>
-      <span className="link-arrow" aria-hidden="true">
-        →
-      </span>
+    <a href={props?.url} target="_blank" rel="noopener noreferrer">
+      {props?.children || props?.url}
     </a>
   ),
 };
@@ -85,18 +98,19 @@ function BioContent({ body }: { body: AstNode | null | undefined }) {
         }
 
         if (node.type === "p") {
-          const href = findUrl(node);
-          const text = astToText(node).replace(/\\:/g, ":").replace(/\\\./g, ".").trim();
-          if (href) {
-            const label = text.replace(href, "").trim() || href;
-            return <LinkCard key={index} href={href} label={label} />;
+          const card = asLinkCard(node) ?? asPlainUrlParagraph(node);
+          if (card) {
+            return <LinkCard key={index} href={card.href} label={card.label} />;
           }
-          if (isBoldHeading(node) && text) {
-            return (
-              <h2 key={index} className="section-title">
-                {text}
-              </h2>
-            );
+          if (isBoldHeading(node)) {
+            const text = astToText(node).trim();
+            if (text) {
+              return (
+                <h2 key={index} className="section-title">
+                  {text}
+                </h2>
+              );
+            }
           }
         }
 

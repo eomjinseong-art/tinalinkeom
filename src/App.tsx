@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Link, useLoaderData, useParams, ty
 import { TinaMarkdown, type Components } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
+import { VisitCounter } from "./VisitCounter";
 import "./App.css";
 
 type AstNode = {
@@ -125,11 +126,14 @@ function Page() {
         </main>
       </div>
       <footer className="footer">
-        <Link to="/">Home</Link>
-        <span aria-hidden="true">·</span>
-        <Link to="/about">About</Link>
-        <span aria-hidden="true">·</span>
-        <a href="/admin/index.html">Admin</a>
+        <VisitCounter />
+        <nav className="footer-nav">
+          <Link to="/">Home</Link>
+          <span aria-hidden="true">·</span>
+          <Link to="/about">About</Link>
+          <span aria-hidden="true">·</span>
+          <a href="/admin/index.html">Admin</a>
+        </nav>
       </footer>
     </div>
   );

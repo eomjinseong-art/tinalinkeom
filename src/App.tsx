@@ -1,3 +1,4 @@
+import { isValidElement, type ReactNode } from "react";
 import { createBrowserRouter, RouterProvider, Link, useLoaderData, useParams, type LoaderFunctionArgs } from "react-router-dom";
 import { TinaMarkdown, type Components } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
@@ -34,6 +35,17 @@ function astToText(node: AstNode | AstNode[] | undefined): string {
   if (Array.isArray(node)) return node.map(astToText).join("");
   if (typeof node.text === "string") return node.text;
   return astToText(node.children);
+}
+
+function nodeToText(node: unknown): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(nodeToText).join("");
+  if (isValidElement(node)) return nodeToText((node.props as { children?: ReactNode }).children);
+  if (typeof node === "object" && ("text" in node || "children" in node)) {
+    return astToText(node as AstNode);
+  }
+  return "";
 }
 
 function findUrl(node: AstNode | AstNode[] | undefined): string | null {
@@ -75,20 +87,9 @@ const markdownComponents: Components<{}> = {
   h3: (props) => <h2 className="section-title">{props?.children}</h2>,
   bold: (props) => <h2 className="section-title">{props?.children}</h2>,
   a: (props) => {
-    const href = props?.url ? normalizeUrl(props.url) : undefined;
-    const rawLabel = astToText(props?.children as AstNode).trim() || href || "";
-    const { title, hint } = splitLabel(rawLabel);
-    return (
-      <a className="link-card" href={href} target="_blank" rel="noopener noreferrer">
-        <span className="link-copy">
-          <span className="link-label">{title}</span>
-          {hint ? <span className="link-hint">{hint}</span> : null}
-        </span>
-        <span className="link-arrow" aria-hidden="true">
-          →
-        </span>
-      </a>
-    );
+    const href = props?.url ? normalizeUrl(props.url) : "";
+    const rawLabel = nodeToText(props?.children).trim() || href;
+    return <LinkCard href={href} label={rawLabel} />;
   },
 };
 

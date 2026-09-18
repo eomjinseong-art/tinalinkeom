@@ -2,8 +2,21 @@ import { createBrowserRouter, RouterProvider, Link, useLoaderData, useParams, ty
 import { TinaMarkdown, type Components } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
+import { ContactForm } from "./ContactForm";
 import { VisitCounter } from "./VisitCounter";
 import "./App.css";
+
+function normalizeUrl(url: string): string {
+  return url.replace(/\\:/g, ":").replace(/\\\./g, ".");
+}
+
+function splitLabel(label: string): { title: string; hint?: string } {
+  const parts = label.split(/\s+[—–-]\s+/);
+  if (parts.length >= 2 && parts[0]?.trim()) {
+    return { title: parts[0].trim(), hint: parts.slice(1).join(" — ").trim() };
+  }
+  return { title: label };
+}
 
 type AstNode = {
   type?: string;
@@ -42,9 +55,13 @@ function isBoldHeading(node: AstNode): boolean {
 }
 
 function LinkCard({ href, label }: { href: string; label: string }) {
+  const { title, hint } = splitLabel(label);
   return (
     <a className="link-card" href={href} target="_blank" rel="noopener noreferrer">
-      <span className="link-label">{label}</span>
+      <span className="link-copy">
+        <span className="link-label">{title}</span>
+        {hint ? <span className="link-hint">{hint}</span> : null}
+      </span>
       <span className="link-arrow" aria-hidden="true">
         →
       </span>
@@ -57,14 +74,22 @@ const markdownComponents: Components<{}> = {
   h2: (props) => <h2 className="section-title">{props?.children}</h2>,
   h3: (props) => <h2 className="section-title">{props?.children}</h2>,
   bold: (props) => <h2 className="section-title">{props?.children}</h2>,
-  a: (props) => (
-    <a className="link-card" href={props?.url} target="_blank" rel="noopener noreferrer">
-      <span className="link-label">{props?.children || props?.url}</span>
-      <span className="link-arrow" aria-hidden="true">
-        →
-      </span>
-    </a>
-  ),
+  a: (props) => {
+    const href = props?.url ? normalizeUrl(props.url) : undefined;
+    const rawLabel = astToText(props?.children as AstNode).trim() || href || "";
+    const { title, hint } = splitLabel(rawLabel);
+    return (
+      <a className="link-card" href={href} target="_blank" rel="noopener noreferrer">
+        <span className="link-copy">
+          <span className="link-label">{title}</span>
+          {hint ? <span className="link-hint">{hint}</span> : null}
+        </span>
+        <span className="link-arrow" aria-hidden="true">
+          →
+        </span>
+      </a>
+    );
+  },
 };
 
 function BioContent({ body }: { body: AstNode | null | undefined }) {
@@ -86,10 +111,11 @@ function BioContent({ body }: { body: AstNode | null | undefined }) {
 
         if (node.type === "p") {
           const href = findUrl(node);
-          const text = astToText(node).replace(/\\:/g, ":").replace(/\\\./g, ".").trim();
+          const text = normalizeUrl(astToText(node)).trim();
           if (href) {
-            const label = text.replace(href, "").trim() || href;
-            return <LinkCard key={index} href={href} label={label} />;
+            const normalizedHref = normalizeUrl(href);
+            const label = text.replace(normalizedHref, "").trim() || normalizedHref;
+            return <LinkCard key={index} href={normalizedHref} label={label} />;
           }
           if (isBoldHeading(node) && text) {
             return (
@@ -119,10 +145,13 @@ function Page() {
             {isAbout ? "👋" : "🔗"}
           </div>
           <h1 className="hero-title">{isAbout ? "About" : "Links"}</h1>
-          {!isAbout && <p className="hero-sub">프로젝트 · 블로그 · 유튜브 모음</p>}
+          {!isAbout && <p className="hero-sub">운영 중인 서비스 · 콘텐츠 · 채널</p>}
         </header>
-        <main className="content" data-tina-field={tinaField(data.page, "body")}>
-          <BioContent body={data.page.body} />
+        <main className="content">
+          <div className="bio-links" data-tina-field={tinaField(data.page, "body")}>
+            <BioContent body={data.page.body} />
+          </div>
+          {!isAbout && <ContactForm />}
         </main>
       </div>
       <footer className="footer">

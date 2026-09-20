@@ -66,10 +66,22 @@ function isBoldHeading(node: AstNode): boolean {
   return kids.length > 0 && kids.every((child) => Boolean(child.bold));
 }
 
+const FEATURED_SHOP_HREF = "https://b-cat-cpang.vercel.app/";
+
+function isFeaturedShop(href: string): boolean {
+  return href.replace(/\/+$/, "") === FEATURED_SHOP_HREF.replace(/\/+$/, "");
+}
+
 function LinkCard({ href, label }: { href: string; label: string }) {
   const { title, hint } = splitLabel(label);
+  const featured = isFeaturedShop(href);
   return (
-    <a className="link-card" href={href} target="_blank" rel="noopener noreferrer">
+    <a
+      className={featured ? "link-card link-card-featured" : "link-card"}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <span className="link-copy">
         <span className="link-label">{title}</span>
         {hint ? <span className="link-hint">{hint}</span> : null}

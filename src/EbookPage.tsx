@@ -21,7 +21,7 @@ const EBOOKS = [
 export const EBOOK_PDF_HREF = EBOOKS[0].href;
 export const VERCEL_EBOOK_PDF_HREF = EBOOKS[1].href;
 
-const PAGE_TITLE = "나두Ai 무료 전자책 — 깃허브 · Vercel 초간단";
+const PAGE_TITLE = "나두Ai 전자책모음";
 
 const CTAS = [
   {

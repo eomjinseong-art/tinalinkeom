@@ -4,6 +4,7 @@ import { TinaMarkdown, type Components } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
 import { ContactForm } from "./ContactForm";
+import { EbookPage } from "./EbookPage";
 import { VisitCounter } from "./VisitCounter";
 import "./App.css";
 
@@ -72,16 +73,16 @@ function isFeaturedShop(href: string): boolean {
   return href.replace(/\/+$/, "") === FEATURED_SHOP_HREF.replace(/\/+$/, "");
 }
 
+function isInternalHref(href: string): boolean {
+  return href.startsWith("/") && !href.startsWith("//");
+}
+
 function LinkCard({ href, label }: { href: string; label: string }) {
   const { title, hint } = splitLabel(label);
   const featured = isFeaturedShop(href);
-  return (
-    <a
-      className={featured ? "link-card link-card-featured" : "link-card"}
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+  const className = featured ? "link-card link-card-featured" : "link-card";
+  const body = (
+    <>
       <span className="link-copy">
         <span className="link-label">{title}</span>
         {hint ? <span className="link-hint">{hint}</span> : null}
@@ -89,6 +90,20 @@ function LinkCard({ href, label }: { href: string; label: string }) {
       <span className="link-arrow" aria-hidden="true">
         →
       </span>
+    </>
+  );
+
+  if (isInternalHref(href)) {
+    return (
+      <Link className={className} to={href}>
+        {body}
+      </Link>
+    );
+  }
+
+  return (
+    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
+      {body}
     </a>
   );
 }
@@ -183,6 +198,7 @@ function Page() {
 
 const router = createBrowserRouter([
   { path: "/", loader: load, element: <Page /> },
+  { path: "/ebook", element: <EbookPage /> },
   { path: "/:slug", loader: load, element: <Page /> },
 ]);
 

@@ -2,11 +2,26 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { VisitCounter } from "./VisitCounter";
 
-/** Drop the finished PDF at `public/guides/nadoo-github-guide.pdf`. */
-export const EBOOK_PDF_HREF = "/guides/nadoo-github-guide.pdf";
-const EBOOK_PDF_FILENAME = "nadoo-github-guide.pdf";
+const EBOOKS = [
+  {
+    href: "/guides/nadoo-github-guide.pdf",
+    filename: "nadoo-github-guide.pdf",
+    title: "AI 하는 사람을 위한 깃허브 초간단",
+    hint: "무료 PDF 받기",
+  },
+  {
+    href: "/guides/nadoo-vercel-guide.pdf",
+    filename: "nadoo-vercel-guide.pdf",
+    title: "AI 하는 사람을 위한 Vercel 초간단",
+    hint: "무료 PDF 받기",
+  },
+] as const;
 
-const PAGE_TITLE = "나두Ai 「AI 하는 사람을 위한 깃허브 초간단」 전자책 소개 (무료)";
+/** GitHub guide path — kept for callers that still import the first ebook. */
+export const EBOOK_PDF_HREF = EBOOKS[0].href;
+export const VERCEL_EBOOK_PDF_HREF = EBOOKS[1].href;
+
+const PAGE_TITLE = "나두Ai 무료 전자책 — 깃허브 · Vercel 초간단";
 
 const CTAS = [
   {
@@ -92,13 +107,23 @@ export function EbookPage() {
           </div>
           <h1 className="hero-title hero-title-ebook">{PAGE_TITLE}</h1>
           <p className="hero-sub">
-            계정 만들기부터 올리고 공유하기까지, AI 작업에 필요한 GitHub만 짧게 정리했어요.
+            계정 만들기부터 올리고 배포하기까지, AI 작업에 필요한 GitHub과 Vercel만 짧게 정리했어요.
           </p>
         </header>
         <main className="content">
-          <a className="download-btn" href={EBOOK_PDF_HREF} download={EBOOK_PDF_FILENAME}>
-            무료 PDF 다운로드
-          </a>
+          <div className="download-list">
+            {EBOOKS.map((ebook) => (
+              <a
+                key={ebook.href}
+                className="download-btn"
+                href={ebook.href}
+                download={ebook.filename}
+              >
+                <span className="download-btn-title">{ebook.title}</span>
+                <span className="download-btn-hint">{ebook.hint}</span>
+              </a>
+            ))}
+          </div>
 
           <h2 className="section-title">함께 보기</h2>
           <div className="bio-links">

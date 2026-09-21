@@ -15,11 +15,18 @@ const EBOOKS = [
     title: "AI 하는 사람을 위한 Vercel 초간단",
     hint: "무료 PDF 받기",
   },
+  {
+    href: "/guides/nadoo-cat-guide.pdf",
+    filename: "nadoo-cat-guide.pdf",
+    title: "첫 고양이 집사 초간단",
+    hint: "숨숨마을 · 숨숨위키",
+  },
 ] as const;
 
 /** GitHub guide path — kept for callers that still import the first ebook. */
 export const EBOOK_PDF_HREF = EBOOKS[0].href;
 export const VERCEL_EBOOK_PDF_HREF = EBOOKS[1].href;
+export const CAT_EBOOK_PDF_HREF = EBOOKS[2].href;
 
 const PAGE_TITLE = "나두Ai 전자책모음";
 
@@ -30,6 +37,13 @@ const CTAS = [
     hint: "고양이 용품 · 추천",
     external: true,
     featured: true,
+  },
+  {
+    href: "https://b-cat-cpang-wiki.vercel.app/",
+    title: "숨숨위키",
+    hint: "고양이 위키",
+    external: true,
+    featured: false,
   },
   {
     href: "https://car-parts-cpang.vercel.app/",
@@ -107,7 +121,7 @@ export function EbookPage() {
           </div>
           <h1 className="hero-title hero-title-ebook">{PAGE_TITLE}</h1>
           <p className="hero-sub">
-            계정 만들기부터 올리고 배포하기까지, AI 작업에 필요한 GitHub과 Vercel만 짧게 정리했어요.
+            GitHub·Vercel 초간단과 첫 고양이 집사 가이드를 무료 PDF로 받아 보세요.
           </p>
         </header>
         <main className="content">

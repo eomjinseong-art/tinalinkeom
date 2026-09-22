@@ -364,6 +364,16 @@ body {
   outline-offset: 2px;
 }
 
+.partner-disclosure {
+  margin: 1.15rem 0.15rem 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+  word-break: keep-all;
+}
+
 .footer {
   display: flex;
   flex-direction: column;

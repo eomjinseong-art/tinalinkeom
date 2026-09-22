@@ -30,54 +30,35 @@ export const CAT_EBOOK_PDF_HREF = EBOOKS[2].href;
 
 const PAGE_TITLE = "나두Ai 전자책모음";
 
+const COUPANG_DISCLOSURE =
+  "이 포스팅(페이지)은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.";
+
 const CTAS = [
   {
     href: "https://b-cat-cpang.vercel.app/",
     title: "숨숨마을",
     hint: "고양이 용품 · 추천",
-    external: true,
     featured: true,
-  },
-  {
-    href: "https://b-cat-cpang-wiki.vercel.app/",
-    title: "숨숨위키",
-    hint: "고양이 위키",
-    external: true,
-    featured: false,
   },
   {
     href: "https://car-parts-cpang.vercel.app/",
     title: "오토픽스",
     hint: "자동차용품",
-    external: true,
     featured: false,
   },
   {
     href: "https://surfwikikoreacpang.vercel.app/",
     title: "서핑용품",
     hint: "서핑 쇼핑몰",
-    external: true,
-    featured: false,
-  },
-  {
-    href: "/",
-    title: "허브 홈",
-    hint: "링크 모음",
-    external: false,
     featured: false,
   },
 ] as const;
 
-function CtaCard({
-  href,
-  title,
-  hint,
-  external,
-  featured,
-}: (typeof CTAS)[number]) {
+function CtaCard({ href, title, hint, featured }: (typeof CTAS)[number]) {
   const className = featured ? "link-card link-card-featured" : "link-card";
-  const body = (
-    <>
+
+  return (
+    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
       <span className="link-copy">
         <span className="link-label">{title}</span>
         <span className="link-hint">{hint}</span>
@@ -85,21 +66,7 @@ function CtaCard({
       <span className="link-arrow" aria-hidden="true">
         →
       </span>
-    </>
-  );
-
-  if (external) {
-    return (
-      <a className={className} href={href} target="_blank" rel="noopener noreferrer">
-        {body}
-      </a>
-    );
-  }
-
-  return (
-    <Link className={className} to={href}>
-      {body}
-    </Link>
+    </a>
   );
 }
 
@@ -145,6 +112,7 @@ export function EbookPage() {
               <CtaCard key={cta.href} {...cta} />
             ))}
           </div>
+          <p className="partner-disclosure">{COUPANG_DISCLOSURE}</p>
         </main>
       </div>
       <footer className="footer">

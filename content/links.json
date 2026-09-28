@@ -43,6 +43,12 @@
           "id": "07",
           "title": "나두Ai 전자책모음",
           "href": "/ebook"
+        },
+        {
+          "id": "42",
+          "title": "나두Ai 캐러셀",
+          "hint": "매일 AI 캐러셀 모음",
+          "href": "https://nadoo-carousel.vercel.app/"
         }
       ]
     },

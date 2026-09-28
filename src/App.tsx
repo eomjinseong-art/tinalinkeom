@@ -1,10 +1,13 @@
 import { isValidElement, type ReactNode } from "react";
-import { createBrowserRouter, RouterProvider, Link, useLoaderData, useParams, type LoaderFunctionArgs } from "react-router-dom";
+import { createBrowserRouter, redirect, RouterProvider, Link, useLoaderData, useParams, type LoaderFunctionArgs } from "react-router-dom";
 import { TinaMarkdown, type Components } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
 import { ContactForm } from "./ContactForm";
 import { EbookPage } from "./EbookPage";
+import { hubLinks } from "./linkCatalog";
+import { LinkHub, MissingNumberPage } from "./LinkHub";
+import { destinationForPath } from "./shortLinks";
 import { VisitCounter } from "./VisitCounter";
 import "./App.css";
 
@@ -28,8 +31,21 @@ type AstNode = {
   children?: AstNode[];
 };
 
-const load = ({ params }: LoaderFunctionArgs) =>
-  client.queries.page({ relativePath: `${params.slug ?? "home"}.mdx` });
+function redirectKnownNumber(pathname: string) {
+  const dest = destinationForPath(pathname, hubLinks);
+  if (dest) return redirect(dest, 302);
+  return { missingNumber: true as const };
+}
+
+function isMissingNumber(data: unknown): data is { missingNumber: true } {
+  return !!data && typeof data === "object" && "missingNumber" in data && data.missingNumber === true;
+}
+
+const load = ({ params }: LoaderFunctionArgs) => {
+  const slug = params.slug ?? "home";
+  if (/^\d+$/.test(slug)) return redirectKnownNumber(`/${slug}`);
+  return client.queries.page({ relativePath: `${slug}.mdx` });
+};
 
 function astToText(node: AstNode | AstNode[] | undefined): string {
   if (!node) return "";
@@ -160,9 +176,51 @@ function BioContent({ body }: { body: AstNode | null | undefined }) {
   );
 }
 
+function SiteFooter() {
+  return (
+    <footer className="footer">
+      <VisitCounter />
+      <nav className="footer-nav">
+        <Link to="/">Home</Link>
+        <span aria-hidden="true">·</span>
+        <Link to="/about">About</Link>
+        <span aria-hidden="true">·</span>
+        <a href="/admin/index.html">Admin</a>
+      </nav>
+    </footer>
+  );
+}
+
+function HomePage() {
+  return (
+    <div className="page-shell">
+      <div className="bio-card">
+        <header className="hero">
+          <div className="avatar" aria-hidden="true">
+            🔗
+          </div>
+          <h1 className="hero-title">Links</h1>
+          <p className="hero-sub">운영 중인 서비스 · 콘텐츠 · 채널</p>
+        </header>
+        <main className="content">
+          <LinkHub />
+          <ContactForm />
+        </main>
+      </div>
+      <SiteFooter />
+    </div>
+  );
+}
+
 function Page() {
+  const loaderData = useLoaderData();
+  if (isMissingNumber(loaderData)) return <MissingNumberPage />;
+  return <ContentPage initial={loaderData as Awaited<ReturnType<typeof client.queries.page>>} />;
+}
+
+function ContentPage({ initial }: { initial: Awaited<ReturnType<typeof client.queries.page>> }) {
   const { slug } = useParams();
-  const { data } = useTina(useLoaderData() as Awaited<ReturnType<typeof load>>);
+  const { data } = useTina(initial);
   const isAbout = slug === "about";
 
   return (
@@ -182,23 +240,19 @@ function Page() {
           {!isAbout && <ContactForm />}
         </main>
       </div>
-      <footer className="footer">
-        <VisitCounter />
-        <nav className="footer-nav">
-          <Link to="/">Home</Link>
-          <span aria-hidden="true">·</span>
-          <Link to="/about">About</Link>
-          <span aria-hidden="true">·</span>
-          <a href="/admin/index.html">Admin</a>
-        </nav>
-      </footer>
+      <SiteFooter />
     </div>
   );
 }
 
 const router = createBrowserRouter([
-  { path: "/", loader: load, element: <Page /> },
+  { path: "/", element: <HomePage /> },
   { path: "/ebook", element: <EbookPage /> },
+  {
+    path: "/n/:num",
+    loader: ({ params }) => redirectKnownNumber(`/n/${params.num ?? ""}`),
+    element: <MissingNumberPage />,
+  },
   { path: "/:slug", loader: load, element: <Page /> },
 ]);
 

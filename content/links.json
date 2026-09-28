@@ -1,0 +1,270 @@
+{
+  "sections": [
+    {
+      "title": "AI / 툴",
+      "links": [
+        {
+          "id": "01",
+          "title": "나두 Ai",
+          "hint": "AI 도구",
+          "href": "https://ai-tools-site-liart-one.vercel.app/"
+        },
+        {
+          "id": "02",
+          "title": "나두 오토메이션",
+          "hint": "업무 자동화",
+          "href": "https://nadoo-automation.vercel.app/"
+        },
+        {
+          "id": "03",
+          "title": "나두 PDF 변환기",
+          "hint": "PDF 도구",
+          "href": "https://stirlingpdf-one.vercel.app/"
+        },
+        {
+          "id": "04",
+          "title": "나두 탭 링크",
+          "hint": "탭 저장",
+          "href": "https://tablinkyo.vercel.app/"
+        },
+        {
+          "id": "05",
+          "title": "나두 Ai 랩",
+          "hint": "AI 실험",
+          "href": "https://nadoo-ai-lab.vercel.app/"
+        },
+        {
+          "id": "06",
+          "title": "Ai 툴스 아틀라스",
+          "hint": "도구 지도",
+          "href": "https://nadoo-ai-autom.vercel.app/"
+        },
+        {
+          "id": "07",
+          "title": "나두Ai 전자책모음",
+          "href": "/ebook"
+        }
+      ]
+    },
+    {
+      "title": "쇼핑 / 마켓",
+      "links": [
+        {
+          "id": "08",
+          "title": "숨숨마을",
+          "hint": "고양이 용품 · 추천",
+          "href": "https://b-cat-cpang.vercel.app/"
+        },
+        {
+          "id": "09",
+          "title": "아브아르(AVOIR)",
+          "hint": "여성의류",
+          "href": "https://avoir24.com/"
+        },
+        {
+          "id": "10",
+          "title": "그날의 남녀",
+          "hint": "마켓",
+          "href": "https://a-couple-score-cpang.vercel.app/"
+        },
+        {
+          "id": "11",
+          "title": "서핑용품",
+          "hint": "서핑 쇼핑몰",
+          "href": "https://surfwikikoreacpang.vercel.app/"
+        },
+        {
+          "id": "12",
+          "title": "오토픽스",
+          "hint": "자동차용품",
+          "href": "https://car-parts-cpang.vercel.app/"
+        }
+      ]
+    },
+    {
+      "title": "콘텐츠 / 앱",
+      "links": [
+        {
+          "id": "13",
+          "title": "숨숨위키",
+          "hint": "고양이 위키",
+          "href": "https://b-cat-cpang-wiki.vercel.app/"
+        },
+        {
+          "id": "14",
+          "title": "일기쓰는 고양이",
+          "hint": "컨디션 기록",
+          "href": "https://cat-condition-log.vercel.app/"
+        },
+        {
+          "id": "15",
+          "title": "그날의 남녀",
+          "hint": "관계 개선",
+          "href": "https://couple-score.vercel.app/"
+        },
+        {
+          "id": "16",
+          "title": "서프위키Ai",
+          "hint": "전국 서핑지도",
+          "href": "https://surfwikikorea.vercel.app/"
+        },
+        {
+          "id": "17",
+          "title": "본드 아카이브",
+          "hint": "007 자료",
+          "href": "https://bond-archive-two.vercel.app/"
+        },
+        {
+          "id": "18",
+          "title": "미션 임파서블 아카이브",
+          "hint": "미션 임파서블 시리즈 영화·요원·악당·영화 속 차량 아카이브",
+          "href": "https://mi-archive.vercel.app/"
+        },
+        {
+          "id": "19",
+          "title": "분노의 질주 아카이브",
+          "hint": "분노의 질주 시리즈 영화·패밀리·악당·영화 속 차량 74대 아카이브",
+          "href": "https://ff-archive.vercel.app/"
+        },
+        {
+          "id": "20",
+          "title": "영화 체크리스트",
+          "hint": "배우별 출연작 시청 체크",
+          "href": "https://movie-checklist-sigma.vercel.app/"
+        },
+        {
+          "id": "21",
+          "title": "브리티시 모터스",
+          "hint": "영국 자동차",
+          "href": "https://british-motors.vercel.app/"
+        },
+        {
+          "id": "22",
+          "title": "미국차 컬렉션 아카이브",
+          "hint": "머스탱·콜벳·카마로 등 미국 자동차 14개 브랜드 177개 모델",
+          "href": "https://usa-motors.vercel.app/"
+        },
+        {
+          "id": "23",
+          "title": "조웨이더",
+          "hint": "다이어트·운동 트래커",
+          "href": "https://diet-workout-tracker-omega.vercel.app/"
+        },
+        {
+          "id": "24",
+          "title": "로빈스게임월드",
+          "hint": "미니게임 모음",
+          "href": "https://robingames.vercel.app/"
+        }
+      ]
+    },
+    {
+      "title": "블로그",
+      "links": [
+        {
+          "id": "25",
+          "title": "나두 Ai",
+          "hint": "티스토리",
+          "href": "https://nadoo-ai-79.tistory.com/"
+        },
+        {
+          "id": "26",
+          "title": "나두 Ai",
+          "hint": "블로그스팟",
+          "href": "https://nadooai.blogspot.com/"
+        },
+        {
+          "id": "27",
+          "title": "그날의 남녀",
+          "hint": "블로그스팟",
+          "href": "https://couplescore-auto.blogspot.com/"
+        },
+        {
+          "id": "28",
+          "title": "그날의 남녀",
+          "hint": "티스토리",
+          "href": "https://couplescore.tistory.com/"
+        },
+        {
+          "id": "29",
+          "title": "숨숨마을",
+          "hint": "블로그스팟",
+          "href": "https://sumsumvill.blogspot.com/"
+        },
+        {
+          "id": "30",
+          "title": "숨숨마을",
+          "hint": "티스토리",
+          "href": "https://sumsumvill.tistory.com/"
+        },
+        {
+          "id": "31",
+          "title": "쓰레드언니들",
+          "hint": "블로그스팟",
+          "href": "https://threadssisyo.blogspot.com/"
+        },
+        {
+          "id": "32",
+          "title": "쓰레드언니들",
+          "hint": "티스토리",
+          "href": "https://threadssis.tistory.com/"
+        },
+        {
+          "id": "33",
+          "title": "서프위키",
+          "hint": "블로그스팟",
+          "href": "https://surfwikikorea.blogspot.com/"
+        },
+        {
+          "id": "34",
+          "title": "서프위키",
+          "hint": "티스토리",
+          "href": "https://surfwikikorea.tistory.com/"
+        },
+        {
+          "id": "35",
+          "title": "본드 아카이브",
+          "hint": "블로그스팟",
+          "href": "https://bondarchive.blogspot.com/"
+        },
+        {
+          "id": "36",
+          "title": "카케어노트 | 셀프세차·차량관리",
+          "hint": "셀프세차 순서·광택·휠 관리 팁",
+          "href": "https://carcarenote-kr.blogspot.com/"
+        },
+        {
+          "id": "37",
+          "title": "데일리 코디 레시피 | 3040 오늘 뭐 입지",
+          "hint": "3040 여성 데일리 코디 조합",
+          "href": "https://dailycodirecipe.blogspot.com/"
+        }
+      ]
+    },
+    {
+      "title": "YouTube",
+      "links": [
+        {
+          "id": "38",
+          "title": "쓰레드언니들",
+          "href": "https://www.youtube.com/@waitmybabe"
+        },
+        {
+          "id": "39",
+          "title": "아브아르",
+          "href": "https://www.youtube.com/@%EC%95%84%EB%B8%8C%EC%95%84%EB%A5%B4AVOIR"
+        },
+        {
+          "id": "40",
+          "title": "나두 Ai",
+          "href": "https://www.youtube.com/@nadooai-365"
+        },
+        {
+          "id": "41",
+          "title": "그날의 남녀",
+          "href": "https://www.youtube.com/@SpillEnglish-j9b"
+        }
+      ]
+    }
+  ]
+}

@@ -32,7 +32,7 @@ Each site card has a permanent `id` in [`content/links.json`](content/links.json
 - New cards get one higher than the current maximum (`nextPermanentId`).
 - Deleted numbers are never reused.
 
-`/12`, `/012`, and `/n/12` redirect (302) to that card. If the destination has no `utm_*` params yet, the redirect adds `utm_source=tinalink&utm_medium=shortlink&utm_campaign=n12`. `/#12` scrolls to the card on the hub. Edit `content/links.json`, then run `pnpm sync-links` to refresh `vercel.json` and `content/page/home.mdx`. `pnpm build` fails if those generated files are stale.
+`/12`, `/012`, and `/n/12` redirect (302) to that card. If the destination has no `utm_*` params yet, the redirect adds `utm_source=tinalink&utm_medium=shortlink&utm_campaign=n12`. `/#12` scrolls to the card on the hub. Edit `content/links.json`, then run `pnpm sync-links` to refresh `vercel.json` and `content/page/home.mdx`. `pnpm build` runs that same generator before Tina and Vite, so a stale mirror does not fail the deploy. `pnpm sync-links -- --check` still exits if the files were not regenerated.
 
 ## Deploying
 

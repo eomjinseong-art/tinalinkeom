@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "tinacms dev -c \"vite\"",
     "sync-links": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts",
-    "build": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts --check && tinacms build && vite build",
-    "build-local": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts --check && tinacms build --local --skip-cloud-checks -c \"vite build\"",
+    "build": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts && tinacms build && vite build",
+    "build-local": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts && tinacms build --local --skip-cloud-checks -c \"vite build\"",
     "preview": "vite preview"
   },
   "dependencies": {

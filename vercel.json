@@ -910,6 +910,26 @@
       "source": "/n/41",
       "destination": "https://www.youtube.com/@SpillEnglish-j9b?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n41",
       "statusCode": 302
+    },
+    {
+      "source": "/042",
+      "destination": "https://nadoo-carousel.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n42",
+      "statusCode": 302
+    },
+    {
+      "source": "/42",
+      "destination": "https://nadoo-carousel.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n42",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/042",
+      "destination": "https://nadoo-carousel.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n42",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/42",
+      "destination": "https://nadoo-carousel.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n42",
+      "statusCode": 302
     }
   ],
   "rewrites": [

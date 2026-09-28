@@ -117,7 +117,7 @@ for (let i = 0; i < catalog.length; i += 1) {
 }
 
 const vercelPath = resolve(root, "vercel.json");
-const current = JSON.parse(readFileSync(vercelPath, "utf8")) as {
+const current = JSON.parse(normalizeNewlines(readFileSync(vercelPath, "utf8"))) as {
   $schema?: string;
   rewrites?: unknown;
 };
@@ -129,14 +129,54 @@ const next = {
 const text = `${JSON.stringify(next, null, 2)}\n`;
 const existingVercel = readFileSync(vercelPath, "utf8");
 const existingHome = readFileSync(homeMdxPath, "utf8");
-const stale = existingVercel !== text || existingHome !== homeMdx;
-if (check && stale) {
-  console.error("Short-link files are out of date. Run pnpm sync-links.");
-  process.exit(1);
-}
-if (!check && stale) {
+
+const notes: string[] = [];
+if (existingVercel !== text) notes.push(describeDrift("vercel.json", text, existingVercel));
+if (existingHome !== homeMdx) notes.push(describeDrift("content/page/home.mdx", homeMdx, existingHome));
+
+if (notes.length > 0) {
+  // The build used to exit here. Vercel can rewrite these files before the
+  // script runs (Tina content materialization, line endings, or JSON formatting)
+  // even when git and GitHub Actions still match. Regenerating keeps deploys working.
+  console.log("Short-link files differed from content/links.json. Regenerating.");
+  for (const note of notes) console.log(`  ${note}`);
+  if (check) {
+    console.error("Short-link files are out of date. Run pnpm sync-links.");
+    process.exit(1);
+  }
   if (existingVercel !== text) writeFileSync(vercelPath, text);
   if (existingHome !== homeMdx) writeFileSync(homeMdxPath, homeMdx);
 }
 
 console.log(`Short links ok (${links.length} cards, ${redirects.length} redirects).`);
+
+function normalizeNewlines(value: string): string {
+  return value.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+}
+
+function describeDrift(label: string, expected: string, actual: string): string {
+  const actualNorm = normalizeNewlines(actual);
+  if (actual !== expected && actualNorm === expected) {
+    return `${label}: line endings differ (CRLF vs LF)`;
+  }
+  if (actualNorm.replace(/\n+$/, "\n") === expected.replace(/\n+$/, "\n") && actualNorm !== expected) {
+    return `${label}: trailing newline differs`;
+  }
+  if (label.endsWith(".json")) {
+    try {
+      const samePayload = JSON.stringify(JSON.parse(actualNorm)) === JSON.stringify(JSON.parse(expected));
+      if (samePayload) return `${label}: JSON formatting or key order differs; redirect payload matches`;
+    } catch {
+      return `${label}: not valid JSON`;
+    }
+  }
+  const actualLines = actualNorm.split("\n");
+  const expectedLines = expected.split("\n");
+  const limit = Math.max(actualLines.length, expectedLines.length);
+  for (let i = 0; i < limit; i += 1) {
+    if (actualLines[i] !== expectedLines[i]) {
+      return `${label}: content differs at line ${i + 1} (${actualLines.length} lines on disk, ${expectedLines.length} generated)`;
+    }
+  }
+  return `${label}: differs`;
+}

@@ -138,6 +138,7 @@ body {
   color: inherit;
   text-decoration: none;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+  scroll-margin: 0.85rem;
   transition:
     transform 0.16s ease,
     box-shadow 0.16s ease,
@@ -170,6 +171,137 @@ body {
 .link-card:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
+}
+
+.link-main {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.link-id {
+  flex: 0 0 auto;
+  min-width: 1.7rem;
+  margin-top: 0.12rem;
+  padding: 0.12rem 0.34rem;
+  border-radius: 0.4rem;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.link-card-highlight {
+  border-color: rgba(196, 92, 74, 0.72);
+  background: #fff4ef;
+  animation: link-number-flash 1.6s ease;
+}
+
+@keyframes link-number-flash {
+  0% {
+    box-shadow: 0 0 0 0 rgba(196, 92, 74, 0.45);
+  }
+  40% {
+    box-shadow: 0 0 0 6px rgba(196, 92, 74, 0.16);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(196, 92, 74, 0);
+  }
+}
+
+.link-finder {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0 0 0.35rem;
+}
+
+.link-finder-label {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.02em;
+}
+
+.link-finder-row {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.link-finder-row input {
+  min-width: 0;
+  flex: 1;
+  min-height: 2.5rem;
+  padding: 0.45rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--link);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+}
+
+.link-finder-row input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-color: rgba(196, 92, 74, 0.38);
+  background: #fff;
+}
+
+.link-finder-row button {
+  flex: 0 0 auto;
+  min-height: 2.5rem;
+  padding: 0 0.85rem;
+  border: 0;
+  border-radius: 0.8rem;
+  background: var(--ink);
+  color: #fffdfb;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.link-finder-row button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.link-finder-error {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.missing-number {
+  text-align: center;
+}
+
+.missing-number-home {
+  margin: 0.85rem 0 0.15rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.missing-number-home a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.missing-number-home a:hover,
+.missing-number-home a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .link-copy {
@@ -417,6 +549,12 @@ body {
   color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 0.18em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-card-highlight {
+    animation: none;
+  }
 }
 
 @media (min-width: 640px) {

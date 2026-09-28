@@ -25,6 +25,15 @@ pnpm build
 
 No credentials yet? `pnpm build-local` builds against local content.
 
+## Link numbers
+
+Each site card has a permanent `id` in [`content/links.json`](content/links.json) (`01`, `02`, …). Three digits are used only after 99. The number is stored on the card. It is not computed from the list index, so adding, removing, or reordering cards does not change existing numbers.
+
+- New cards get one higher than the current maximum (`nextPermanentId`).
+- Deleted numbers are never reused.
+
+`/12`, `/012`, and `/n/12` redirect (302) to that card. If the destination has no `utm_*` params yet, the redirect adds `utm_source=tinalink&utm_medium=shortlink&utm_campaign=n12`. `/#12` scrolls to the card on the hub. Edit `content/links.json`, then run `pnpm sync-links` to refresh `vercel.json` and `content/page/home.mdx`. `pnpm build` fails if those generated files are stale.
+
 ## Deploying
 
 This is a client-side SPA — `pnpm build` produces one `dist/index.html` plus assets, and `react-router` decides routes in the browser. A host that only serves matching files will 404 on a direct hit or refresh of any route but `/`, so a rewrite/fallback to `index.html` is required:

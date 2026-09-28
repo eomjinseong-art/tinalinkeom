@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { linkIdForHref } from "./linkCatalog";
+import { SiteLinkCard } from "./SiteLinkCard";
 import { VisitCounter } from "./VisitCounter";
 
 const EBOOKS = [
@@ -54,22 +56,6 @@ const CTAS = [
   },
 ] as const;
 
-function CtaCard({ href, title, hint, featured }: (typeof CTAS)[number]) {
-  const className = featured ? "link-card link-card-featured" : "link-card";
-
-  return (
-    <a className={className} href={href} target="_blank" rel="noopener noreferrer">
-      <span className="link-copy">
-        <span className="link-label">{title}</span>
-        <span className="link-hint">{hint}</span>
-      </span>
-      <span className="link-arrow" aria-hidden="true">
-        →
-      </span>
-    </a>
-  );
-}
-
 export function EbookPage() {
   useEffect(() => {
     const previous = document.title;
@@ -109,7 +95,13 @@ export function EbookPage() {
           <h2 className="section-title">함께 보기</h2>
           <div className="bio-links">
             {CTAS.map((cta) => (
-              <CtaCard key={cta.href} {...cta} />
+              <SiteLinkCard
+                key={cta.href}
+                id={linkIdForHref(cta.href)}
+                title={cta.title}
+                hint={cta.hint}
+                href={cta.href}
+              />
             ))}
           </div>
           <p className="partner-disclosure">{COUPANG_DISCLOSURE}</p>

@@ -4,6 +4,8 @@ export type HubLink = {
   hint?: string;
   href: string;
   section: string;
+  /** Kept for its short URL (/02 etc.) but not shown on the hub page. */
+  hidden?: boolean;
 };
 
 export type HubSection = {
@@ -16,6 +18,7 @@ type RawLink = {
   title?: unknown;
   hint?: unknown;
   href?: unknown;
+  hidden?: unknown;
 };
 
 /** Two digits through 99. Three digits only after that. */
@@ -67,7 +70,8 @@ export function loadCatalog(data: unknown): HubSection[] {
         throw new Error(`Card ${link.id} needs a title and href`);
       }
       const hint = typeof link.hint === "string" && link.hint.trim() ? link.hint : undefined;
-      return { id: link.id, title: link.title, hint, href: link.href, section: title };
+      const hidden = link.hidden === true ? true : undefined;
+      return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden };
     });
 
     return { title, links };

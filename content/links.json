@@ -6,49 +6,56 @@
         {
           "id": "01",
           "title": "나두 Ai",
-          "hint": "AI 도구",
+          "hint": "AI 도구 가이드 · 캐러셀 · 나두 패밀리 모음",
           "href": "https://ai-tools-site-liart-one.vercel.app/"
         },
         {
           "id": "02",
           "title": "나두 오토메이션",
           "hint": "업무 자동화",
-          "href": "https://nadoo-automation.vercel.app/"
+          "href": "https://nadoo-automation.vercel.app/",
+          "hidden": true
         },
         {
           "id": "03",
           "title": "나두 PDF 변환기",
           "hint": "PDF 도구",
-          "href": "https://stirlingpdf-one.vercel.app/"
+          "href": "https://stirlingpdf-one.vercel.app/",
+          "hidden": true
         },
         {
           "id": "04",
           "title": "나두 탭 링크",
           "hint": "탭 저장",
-          "href": "https://tablinkyo.vercel.app/"
+          "href": "https://tablinkyo.vercel.app/",
+          "hidden": true
         },
         {
           "id": "05",
           "title": "나두 Ai 랩",
           "hint": "AI 실험",
-          "href": "https://nadoo-ai-lab.vercel.app/"
+          "href": "https://nadoo-ai-lab.vercel.app/",
+          "hidden": true
         },
         {
           "id": "06",
           "title": "Ai 툴스 아틀라스",
           "hint": "도구 지도",
-          "href": "https://nadoo-ai-autom.vercel.app/"
+          "href": "https://nadoo-ai-autom.vercel.app/",
+          "hidden": true
         },
         {
           "id": "07",
           "title": "나두Ai 전자책모음",
-          "href": "/ebook"
+          "href": "/ebook",
+          "hidden": true
         },
         {
           "id": "42",
           "title": "나두Ai 캐러셀",
           "hint": "매일 AI 캐러셀 모음",
-          "href": "https://nadoo-carousel.vercel.app/"
+          "href": "https://nadoo-carousel.vercel.app/",
+          "hidden": true
         }
       ]
     },

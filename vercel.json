@@ -930,6 +930,26 @@
       "source": "/n/42",
       "destination": "https://nadoo-carousel.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n42",
       "statusCode": 302
+    },
+    {
+      "source": "/043",
+      "destination": "https://the-chosen-korean.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n43",
+      "statusCode": 302
+    },
+    {
+      "source": "/43",
+      "destination": "https://the-chosen-korean.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n43",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/043",
+      "destination": "https://the-chosen-korean.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n43",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/43",
+      "destination": "https://the-chosen-korean.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n43",
+      "statusCode": 302
     }
   ],
   "rewrites": [

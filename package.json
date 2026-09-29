@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "tinacms dev -c \"vite\"",
     "sync-links": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts",
-    "build": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts && tinacms build && vite build",
+    "build": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts && node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/tina-build.mts && vite build",
     "build-local": "node --experimental-strip-types --disable-warning=ExperimentalWarning --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/sync-short-links.mts && tinacms build --local --skip-cloud-checks -c \"vite build\"",
     "preview": "vite preview"
   },
@@ -17,11 +17,11 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1",
-    "tinacms": "^3.9.3",
+    "tinacms": "^3.14.1",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@tinacms/cli": "^2.5.1",
+    "@tinacms/cli": "^3.1.0",
     "@types/node": "^26.0.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",

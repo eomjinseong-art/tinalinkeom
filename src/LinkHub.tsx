@@ -122,6 +122,7 @@ export function LinkHub() {
         {hubSections.map((section) => (
           <Fragment key={section.title}>
             <h2 className="section-title">{section.title}</h2>
+            {section.intro ? <p className="section-intro">{section.intro}</p> : null}
             {section.tabs ? (
               <HubAccordion section={{ ...section, tabs: section.tabs }} />
             ) : (

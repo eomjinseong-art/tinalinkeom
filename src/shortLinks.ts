@@ -23,6 +23,8 @@ export type HubSection = {
   links: HubLink[];
   /** When set, the section renders as an accordion: one tab open at a time. */
   tabs?: HubTab[];
+  /** Optional one-line tagline shown under the section title. */
+  intro?: string;
 };
 
 type RawLink = {
@@ -115,7 +117,9 @@ export function loadCatalog(data: unknown): HubSection[] {
       return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden, tab };
     });
 
-    return tabs ? { title, links, tabs } : { title, links };
+    const rawIntro = (section as { intro?: unknown }).intro;
+    const intro = typeof rawIntro === "string" && rawIntro.trim() ? rawIntro : undefined;
+    return { title, links, ...(tabs ? { tabs } : {}), ...(intro ? { intro } : {}) };
   });
 }
 

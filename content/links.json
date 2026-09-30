@@ -61,41 +61,42 @@
     },
     {
       "title": "나두 패밀리",
+      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화까지, 하루를 AI와 같이 채워요.",
       "tabs": [
         {
           "key": "language",
           "title": "나두랭귀지",
           "emoji": "🗣️",
           "color": "#3f6fe0",
-          "hint": "5개 언어 단어·표현 카드 학습"
+          "hint": "AI 튜터와 매일 언어 공부"
         },
         {
           "key": "fitness",
           "title": "나두피트니스",
           "emoji": "💪",
           "color": "#23936a",
-          "hint": "다이어트·운동 기록과 서핑 지도"
+          "hint": "AI 트레이너와 운동·식단, 그리고 서핑"
         },
         {
           "key": "car",
           "title": "나두카",
           "emoji": "🚗",
           "color": "#d27a22",
-          "hint": "영국차·미국차 모델 아카이브"
+          "hint": "AI와 함께 둘러보는 영국차·미국차 아카이브"
         },
         {
           "key": "movie",
           "title": "나두무비",
           "emoji": "🎬",
           "color": "#7a4fd0",
-          "hint": "영화 체크리스트와 시리즈 아카이브"
+          "hint": "AI와 함께 정리한 영화 체크리스트·시리즈 아카이브"
         }
       ],
       "links": [
         {
           "id": "44",
           "title": "나두랭귀지",
-          "hint": "영어·일본어·스페인어·이탈리아어·러시아어 카드 학습",
+          "hint": "AI 튜터와 영어·일본어·스페인어·이탈리아어·러시아어 카드 학습",
           "href": "https://language-study-snowy.vercel.app/",
           "tab": "language"
         },

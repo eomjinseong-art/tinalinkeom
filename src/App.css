@@ -570,3 +570,60 @@ body {
     font-size: 1.42rem;
   }
 }
+
+.coupang-banner {
+  width: 100%;
+  max-width: 28rem;
+}
+
+.footer .coupang-banner-link {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  text-align: left;
+  text-decoration: none;
+  word-break: keep-all;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.footer .coupang-banner-link:hover,
+.footer .coupang-banner-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.coupang-banner-label {
+  flex-shrink: 0;
+  padding: 0.05rem 0.35rem;
+  border: 1px solid rgba(44, 36, 51, 0.16);
+  border-radius: 5px;
+  color: var(--muted);
+  font-size: 0.64rem;
+}
+
+.coupang-banner-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.coupang-banner-arrow {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.coupang-banner-notice {
+  margin: 0.45rem 0 0;
+  color: #8a8293;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  text-align: center;
+  word-break: keep-all;
+}

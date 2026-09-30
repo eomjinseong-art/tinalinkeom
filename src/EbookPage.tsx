@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { CoupangBanner } from "./CoupangBanner";
 import { linkIdForHref } from "./linkCatalog";
 import { SiteLinkCard } from "./SiteLinkCard";
 import { VisitCounter } from "./VisitCounter";
@@ -108,6 +109,7 @@ export function EbookPage() {
         </main>
       </div>
       <footer className="footer">
+        <CoupangBanner showNotice={false} />
         <VisitCounter />
         <nav className="footer-nav">
           <Link to="/">Home</Link>

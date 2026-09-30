@@ -60,6 +60,105 @@
       ]
     },
     {
+      "title": "나두 패밀리",
+      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화까지, 하루를 AI와 같이 채워요.",
+      "tabs": [
+        {
+          "key": "language",
+          "title": "나두랭귀지",
+          "emoji": "🗣️",
+          "color": "#3f6fe0",
+          "hint": "AI 튜터와 매일 언어 공부"
+        },
+        {
+          "key": "fitness",
+          "title": "나두피트니스",
+          "emoji": "💪",
+          "color": "#23936a",
+          "hint": "AI 트레이너와 운동·식단, 그리고 서핑"
+        },
+        {
+          "key": "car",
+          "title": "나두카",
+          "emoji": "🚗",
+          "color": "#d27a22",
+          "hint": "AI와 함께 둘러보는 영국차·미국차 아카이브"
+        },
+        {
+          "key": "movie",
+          "title": "나두무비",
+          "emoji": "🎬",
+          "color": "#7a4fd0",
+          "hint": "AI와 함께 정리한 영화 체크리스트·시리즈 아카이브"
+        }
+      ],
+      "links": [
+        {
+          "id": "44",
+          "title": "나두랭귀지",
+          "hint": "AI 튜터와 영어·일본어·스페인어·이탈리아어·러시아어 카드 학습",
+          "href": "https://language-study-snowy.vercel.app/",
+          "tab": "language"
+        },
+        {
+          "id": "23",
+          "title": "조웨이더",
+          "hint": "다이어트·운동 트래커",
+          "href": "https://diet-workout-tracker-omega.vercel.app/",
+          "tab": "fitness"
+        },
+        {
+          "id": "16",
+          "title": "서프위키Ai",
+          "hint": "전국 서핑 스팟 지도",
+          "href": "https://surfwikikorea.vercel.app/",
+          "tab": "fitness"
+        },
+        {
+          "id": "21",
+          "title": "브리티시 모터스",
+          "hint": "영국 자동차",
+          "href": "https://british-motors.vercel.app/",
+          "tab": "car"
+        },
+        {
+          "id": "22",
+          "title": "미국차 컬렉션 아카이브",
+          "hint": "미국 자동차 14개 브랜드 177개 모델",
+          "href": "https://usa-motors.vercel.app/",
+          "tab": "car"
+        },
+        {
+          "id": "20",
+          "title": "영화 체크리스트",
+          "hint": "배우별 출연작 시청 체크",
+          "href": "https://movie-checklist-sigma.vercel.app/",
+          "tab": "movie"
+        },
+        {
+          "id": "18",
+          "title": "미션 임파서블 아카이브",
+          "hint": "시리즈 영화·요원·악당·차량 아카이브",
+          "href": "https://mi-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
+          "id": "17",
+          "title": "본드 아카이브",
+          "hint": "007 시리즈 자료",
+          "href": "https://bond-archive-two.vercel.app/",
+          "tab": "movie"
+        },
+        {
+          "id": "19",
+          "title": "분노의 질주 아카이브",
+          "hint": "시리즈 영화·악당·차량 74대 아카이브",
+          "href": "https://ff-archive.vercel.app/",
+          "tab": "movie"
+        }
+      ]
+    },
+    {
       "title": "쇼핑 / 마켓",
       "links": [
         {
@@ -116,54 +215,6 @@
           "href": "https://couple-score.vercel.app/"
         },
         {
-          "id": "16",
-          "title": "서프위키Ai",
-          "hint": "전국 서핑지도",
-          "href": "https://surfwikikorea.vercel.app/"
-        },
-        {
-          "id": "17",
-          "title": "본드 아카이브",
-          "hint": "007 자료",
-          "href": "https://bond-archive-two.vercel.app/"
-        },
-        {
-          "id": "18",
-          "title": "미션 임파서블 아카이브",
-          "hint": "미션 임파서블 시리즈 영화·요원·악당·영화 속 차량 아카이브",
-          "href": "https://mi-archive.vercel.app/"
-        },
-        {
-          "id": "19",
-          "title": "분노의 질주 아카이브",
-          "hint": "분노의 질주 시리즈 영화·패밀리·악당·영화 속 차량 74대 아카이브",
-          "href": "https://ff-archive.vercel.app/"
-        },
-        {
-          "id": "20",
-          "title": "영화 체크리스트",
-          "hint": "배우별 출연작 시청 체크",
-          "href": "https://movie-checklist-sigma.vercel.app/"
-        },
-        {
-          "id": "21",
-          "title": "브리티시 모터스",
-          "hint": "영국 자동차",
-          "href": "https://british-motors.vercel.app/"
-        },
-        {
-          "id": "22",
-          "title": "미국차 컬렉션 아카이브",
-          "hint": "머스탱·콜벳·카마로 등 미국 자동차 14개 브랜드 177개 모델",
-          "href": "https://usa-motors.vercel.app/"
-        },
-        {
-          "id": "23",
-          "title": "조웨이더",
-          "hint": "다이어트·운동 트래커",
-          "href": "https://diet-workout-tracker-omega.vercel.app/"
-        },
-        {
           "id": "24",
           "title": "로빈스게임월드",
           "hint": "미니게임 모음",
@@ -174,12 +225,6 @@
           "title": "더 초즌 한국어 가이드",
           "hint": "성경 몰라도 보는 시즌1~5 줄거리·인물·성경 구절",
           "href": "https://the-chosen-korean.vercel.app/"
-        },
-        {
-          "id": "44",
-          "title": "나두랭귀지",
-          "hint": "영어·일본어·스페인어·이탈리아어·러시아어 카드 학습",
-          "href": "https://language-study-snowy.vercel.app/"
         }
       ]
     },

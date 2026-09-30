@@ -253,7 +253,8 @@
           "title": "그날의 남녀",
           "hint": "커플 솔루션 마켓",
           "href": "https://a-couple-score-cpang.vercel.app/",
-          "tab": "content"
+          "tab": "content",
+          "hidden": true
         },
         {
           "id": "53",

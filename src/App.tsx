@@ -4,6 +4,7 @@ import { TinaMarkdown, type Components } from "tinacms/dist/rich-text";
 import { tinaField, useTina } from "tinacms/dist/react";
 import client from "../tina/__generated__/client";
 import { ContactForm } from "./ContactForm";
+import { CoupangBanner } from "./CoupangBanner";
 import { EbookPage } from "./EbookPage";
 import { hubLinks } from "./linkCatalog";
 import { LinkHub, MissingNumberPage } from "./LinkHub";
@@ -179,6 +180,7 @@ function BioContent({ body }: { body: AstNode | null | undefined }) {
 function SiteFooter() {
   return (
     <footer className="footer">
+      <CoupangBanner />
       <VisitCounter />
       <nav className="footer-nav">
         <Link to="/">Home</Link>

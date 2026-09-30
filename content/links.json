@@ -258,8 +258,8 @@
         },
         {
           "id": "53",
-          "title": "로빈스게임월드",
-          "hint": "미니게임 모음",
+          "title": "나두게임",
+          "hint": "방구 뀌고 가는 병맛 초딩 미니게임 💨",
           "href": "https://robingames.vercel.app/",
           "tab": "content"
         },
@@ -513,8 +513,8 @@
         },
         {
           "id": "24",
-          "title": "로빈스게임월드",
-          "hint": "미니게임 모음",
+          "title": "나두게임",
+          "hint": "방구 뀌고 가는 병맛 초딩 미니게임 💨",
           "href": "https://robingames.vercel.app/",
           "hidden": true
         },

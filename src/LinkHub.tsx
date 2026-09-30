@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef, useState, type FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { hubLinkByNumber, hubSections } from "./linkCatalog";
 import { parseLinkNumber } from "./shortLinks";
+import { HubAccordion } from "./HubAccordion";
 import { SiteLinkCard } from "./SiteLinkCard";
 
 const MISSING_NUMBER = "없는 번호입니다.";
@@ -12,6 +13,14 @@ function revealLinkCard(card: HTMLElement): void {
     if (node instanceof HTMLDetailsElement) node.open = true;
     if (node.hidden) node.hidden = false;
     node = node.parentElement;
+  }
+
+  const accordionPanel = card.closest<HTMLElement>("[data-accordion-panel]");
+  if (accordionPanel?.id) {
+    const toggle = document.querySelector<HTMLElement>(
+      `[data-accordion-tab][aria-controls="${CSS.escape(accordionPanel.id)}"]`,
+    );
+    if (toggle && toggle.getAttribute("aria-expanded") === "false") toggle.click();
   }
 
   const panel = card.closest<HTMLElement>('[role="tabpanel"]');
@@ -113,9 +122,15 @@ export function LinkHub() {
         {hubSections.map((section) => (
           <Fragment key={section.title}>
             <h2 className="section-title">{section.title}</h2>
-            {section.links.filter((link) => !link.hidden).map((link) => (
-              <SiteLinkCard key={link.id} id={link.id} title={link.title} hint={link.hint} href={link.href} />
-            ))}
+            {section.tabs ? (
+              <HubAccordion section={{ ...section, tabs: section.tabs }} />
+            ) : (
+              section.links
+                .filter((link) => !link.hidden)
+                .map((link) => (
+                  <SiteLinkCard key={link.id} id={link.id} title={link.title} hint={link.hint} href={link.href} />
+                ))
+            )}
           </Fragment>
         ))}
       </div>

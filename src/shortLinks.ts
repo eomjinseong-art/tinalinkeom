@@ -6,11 +6,23 @@ export type HubLink = {
   section: string;
   /** Kept for its short URL (/02 etc.) but not shown on the hub page. */
   hidden?: boolean;
+  /** Accordion tab key inside a section that declares `tabs`. */
+  tab?: string;
+};
+
+export type HubTab = {
+  key: string;
+  title: string;
+  emoji: string;
+  color: string;
+  hint?: string;
 };
 
 export type HubSection = {
   title: string;
   links: HubLink[];
+  /** When set, the section renders as an accordion: one tab open at a time. */
+  tabs?: HubTab[];
 };
 
 type RawLink = {
@@ -19,7 +31,25 @@ type RawLink = {
   hint?: unknown;
   href?: unknown;
   hidden?: unknown;
+  tab?: unknown;
 };
+
+function loadTabs(raw: unknown, sectionTitle: string): HubTab[] | undefined {
+  if (raw === undefined) return undefined;
+  if (!Array.isArray(raw) || raw.length === 0) throw new Error(`tabs in ${sectionTitle} must be a non-empty array`);
+  const keys = new Set<string>();
+  return raw.map((tab) => {
+    const t = (tab ?? {}) as Record<string, unknown>;
+    if (typeof t.key !== "string" || !/^[a-z0-9-]+$/.test(t.key)) throw new Error(`Invalid tab key in ${sectionTitle}`);
+    if (keys.has(t.key)) throw new Error(`Duplicate tab key ${t.key}`);
+    keys.add(t.key);
+    if (typeof t.title !== "string" || !t.title.trim()) throw new Error(`Tab ${t.key} needs a title`);
+    if (typeof t.emoji !== "string" || !t.emoji.trim()) throw new Error(`Tab ${t.key} needs an emoji`);
+    if (typeof t.color !== "string" || !/^#[0-9a-fA-F]{6}$/.test(t.color)) throw new Error(`Tab ${t.key} needs a #rrggbb color`);
+    const hint = typeof t.hint === "string" && t.hint.trim() ? t.hint : undefined;
+    return { key: t.key, title: t.title, emoji: t.emoji, color: t.color, hint };
+  });
+}
 
 /** Two digits through 99. Three digits only after that. */
 export function formatLinkId(n: number): string {
@@ -56,6 +86,8 @@ export function loadCatalog(data: unknown): HubSection[] {
     }
 
     const title = (section as { title: string }).title;
+    const tabs = loadTabs((section as { tabs?: unknown }).tabs, title);
+    const tabKeys = new Set(tabs?.map((tab) => tab.key));
     const links = (section as { links: RawLink[] }).links.map((link) => {
       if (typeof link.id !== "string" || typeof link.title !== "string" || typeof link.href !== "string") {
         throw new Error(`Invalid card in ${title}`);
@@ -71,10 +103,19 @@ export function loadCatalog(data: unknown): HubSection[] {
       }
       const hint = typeof link.hint === "string" && link.hint.trim() ? link.hint : undefined;
       const hidden = link.hidden === true ? true : undefined;
-      return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden };
+      let tab: string | undefined;
+      if (tabs) {
+        if (typeof link.tab !== "string" || !tabKeys.has(link.tab)) {
+          throw new Error(`Card ${link.id} in ${title} needs a tab (${[...tabKeys].join(", ")})`);
+        }
+        tab = link.tab;
+      } else if (link.tab !== undefined) {
+        throw new Error(`Card ${link.id} has a tab but ${title} has no tabs`);
+      }
+      return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden, tab };
     });
 
-    return { title, links };
+    return tabs ? { title, links, tabs } : { title, links };
   });
 }
 

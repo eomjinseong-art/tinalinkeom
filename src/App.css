@@ -627,3 +627,122 @@ body {
   text-align: center;
   word-break: keep-all;
 }
+
+/* 나두 패밀리 accordion — tab buttons follow the ebook download-btn look, one colour per tab. */
+.hub-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hub-tab {
+  --tab-color: var(--accent);
+  border-radius: 1rem;
+}
+
+.hub-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: 100%;
+  min-height: 3.25rem;
+  margin: 0;
+  padding: 0.85rem 1rem;
+  border: 0;
+  border-radius: 1rem;
+  background: var(--tab-color);
+  color: #fffdfb;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--tab-color) 22%, transparent);
+  transition:
+    transform 0.18s ease,
+    filter 0.18s ease;
+}
+
+.hub-tab-btn:hover,
+.hub-tab-btn:focus-visible {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.hub-tab-btn:focus-visible {
+  outline: 2px solid var(--tab-color);
+  outline-offset: 2px;
+}
+
+.hub-tab-emoji {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 0.7rem;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 1.15rem;
+}
+
+.hub-tab-copy {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.18rem;
+}
+
+.hub-tab-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.hub-tab-hint {
+  font-size: 0.78rem;
+  font-weight: 550;
+  line-height: 1.3;
+  opacity: 0.88;
+}
+
+.hub-tab-count {
+  flex: none;
+  min-width: 1.5rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.24);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.hub-tab-chevron {
+  flex: none;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.hub-tab-open .hub-tab-chevron {
+  transform: rotate(180deg);
+}
+
+.hub-tab-panel {
+  margin: 0.4rem 0 0.2rem;
+  padding: 0.1rem 0 0 0.6rem;
+  border-left: 3px solid color-mix(in srgb, var(--tab-color) 45%, transparent);
+}
+
+.hub-tab-panel[hidden] {
+  display: none;
+}
+
+.hub-tab-panel .link-card:first-child {
+  margin-top: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-tab-btn,
+  .hub-tab-chevron {
+    transition: none;
+  }
+}

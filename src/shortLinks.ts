@@ -8,6 +8,8 @@ export type HubLink = {
   hidden?: boolean;
   /** Accordion tab key inside a section that declares `tabs`. */
   tab?: string;
+  /** Flagship card: rendered as the large, brand-gradient hero card (대표). */
+  spotlight?: boolean;
 };
 
 export type HubTab = {
@@ -34,6 +36,7 @@ type RawLink = {
   href?: unknown;
   hidden?: unknown;
   tab?: unknown;
+  spotlight?: unknown;
 };
 
 function loadTabs(raw: unknown, sectionTitle: string): HubTab[] | undefined {
@@ -105,6 +108,7 @@ export function loadCatalog(data: unknown): HubSection[] {
       }
       const hint = typeof link.hint === "string" && link.hint.trim() ? link.hint : undefined;
       const hidden = link.hidden === true ? true : undefined;
+      const spotlight = link.spotlight === true ? true : undefined;
       let tab: string | undefined;
       if (tabs) {
         if (typeof link.tab !== "string" || !tabKeys.has(link.tab)) {
@@ -114,7 +118,7 @@ export function loadCatalog(data: unknown): HubSection[] {
       } else if (link.tab !== undefined) {
         throw new Error(`Card ${link.id} has a tab but ${title} has no tabs`);
       }
-      return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden, tab };
+      return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden, tab, spotlight };
     });
 
     const rawIntro = (section as { intro?: unknown }).intro;

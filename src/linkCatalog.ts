@@ -21,5 +21,7 @@ function canonicalHref(href: string): string {
 
 export function linkIdForHref(href: string): string | undefined {
   const key = canonicalHref(href);
-  return hubLinks.find((link) => canonicalHref(link.href) === key)?.id;
+  // The same site can appear in several places (e.g. a 나두 tab and its original section); use its oldest number.
+  const matches = hubLinks.filter((link) => canonicalHref(link.href) === key);
+  return matches.sort((a, b) => Number(a.id) - Number(b.id))[0]?.id;
 }

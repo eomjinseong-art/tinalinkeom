@@ -129,7 +129,14 @@ export function LinkHub() {
               section.links
                 .filter((link) => !link.hidden)
                 .map((link) => (
-                  <SiteLinkCard key={link.id} id={link.id} title={link.title} hint={link.hint} href={link.href} />
+                  <SiteLinkCard
+                    key={link.id}
+                    id={link.id}
+                    title={link.title}
+                    hint={link.hint}
+                    href={link.href}
+                    spotlight={link.spotlight}
+                  />
                 ))
             )}
           </Fragment>

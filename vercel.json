@@ -1630,6 +1630,46 @@
       "source": "/n/77",
       "destination": "https://www.tiktok.com/@seoulspill2?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n77",
       "statusCode": 302
+    },
+    {
+      "source": "/078",
+      "destination": "https://b-cat-cpang-wiki.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n78",
+      "statusCode": 302
+    },
+    {
+      "source": "/78",
+      "destination": "https://b-cat-cpang-wiki.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n78",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/078",
+      "destination": "https://b-cat-cpang-wiki.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n78",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/78",
+      "destination": "https://b-cat-cpang-wiki.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n78",
+      "statusCode": 302
+    },
+    {
+      "source": "/079",
+      "destination": "https://couple-score.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n79",
+      "statusCode": 302
+    },
+    {
+      "source": "/79",
+      "destination": "https://couple-score.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n79",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/079",
+      "destination": "https://couple-score.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n79",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/79",
+      "destination": "https://couple-score.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n79",
+      "statusCode": 302
     }
   ],
   "rewrites": [

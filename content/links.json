@@ -62,7 +62,7 @@
     },
     {
       "title": "나두 패밀리",
-      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화·고양이·쇼핑·컨텐츠까지, 하루를 AI와 같이 채워요.",
+      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화·고양이·쇼핑·컨텐츠·블로그·유튜브·틱톡까지, 하루를 AI와 같이 채워요.",
       "tabs": [
         {
           "key": "language",
@@ -429,6 +429,20 @@
           "hint": "틱톡 @seoulspill2 · OOTD",
           "href": "https://www.tiktok.com/@seoulspill2",
           "tab": "tiktok"
+        },
+        {
+          "id": "78",
+          "title": "숨숨위키",
+          "hint": "냥백과 · 고양이 키우기의 모든 것",
+          "href": "https://b-cat-cpang-wiki.vercel.app/",
+          "tab": "cat"
+        },
+        {
+          "id": "79",
+          "title": "그날의 남녀 앱",
+          "hint": "우리 커플 궁합·관계 개선",
+          "href": "https://couple-score.vercel.app/",
+          "tab": "content"
         }
       ]
     },
@@ -439,31 +453,36 @@
           "id": "08",
           "title": "숨숨마을",
           "hint": "고양이 용품 · 추천",
-          "href": "https://b-cat-cpang.vercel.app/"
+          "href": "https://b-cat-cpang.vercel.app/",
+          "hidden": true
         },
         {
           "id": "09",
           "title": "아브아르(AVOIR)",
           "hint": "여성의류",
-          "href": "https://avoir24.com/"
+          "href": "https://avoir24.com/",
+          "hidden": true
         },
         {
           "id": "10",
           "title": "그날의 남녀",
           "hint": "마켓",
-          "href": "https://a-couple-score-cpang.vercel.app/"
+          "href": "https://a-couple-score-cpang.vercel.app/",
+          "hidden": true
         },
         {
           "id": "11",
           "title": "서핑용품",
           "hint": "서핑 쇼핑몰",
-          "href": "https://surfwikikoreacpang.vercel.app/"
+          "href": "https://surfwikikoreacpang.vercel.app/",
+          "hidden": true
         },
         {
           "id": "12",
           "title": "오토픽스",
           "hint": "자동차용품",
-          "href": "https://car-parts-cpang.vercel.app/"
+          "href": "https://car-parts-cpang.vercel.app/",
+          "hidden": true
         }
       ]
     },
@@ -474,31 +493,36 @@
           "id": "13",
           "title": "숨숨위키",
           "hint": "고양이 위키",
-          "href": "https://b-cat-cpang-wiki.vercel.app/"
+          "href": "https://b-cat-cpang-wiki.vercel.app/",
+          "hidden": true
         },
         {
           "id": "14",
           "title": "일기쓰는 고양이",
           "hint": "컨디션 기록",
-          "href": "https://cat-condition-log.vercel.app/"
+          "href": "https://cat-condition-log.vercel.app/",
+          "hidden": true
         },
         {
           "id": "15",
           "title": "그날의 남녀",
           "hint": "관계 개선",
-          "href": "https://couple-score.vercel.app/"
+          "href": "https://couple-score.vercel.app/",
+          "hidden": true
         },
         {
           "id": "24",
           "title": "로빈스게임월드",
           "hint": "미니게임 모음",
-          "href": "https://robingames.vercel.app/"
+          "href": "https://robingames.vercel.app/",
+          "hidden": true
         },
         {
           "id": "43",
           "title": "더 초즌 한국어 가이드",
           "hint": "성경 몰라도 보는 시즌1~5 줄거리·인물·성경 구절",
-          "href": "https://the-chosen-korean.vercel.app/"
+          "href": "https://the-chosen-korean.vercel.app/",
+          "hidden": true
         }
       ]
     },
@@ -509,79 +533,92 @@
           "id": "25",
           "title": "나두 Ai",
           "hint": "티스토리",
-          "href": "https://nadoo-ai-79.tistory.com/"
+          "href": "https://nadoo-ai-79.tistory.com/",
+          "hidden": true
         },
         {
           "id": "26",
           "title": "나두 Ai",
           "hint": "블로그스팟",
-          "href": "https://nadooai.blogspot.com/"
+          "href": "https://nadooai.blogspot.com/",
+          "hidden": true
         },
         {
           "id": "27",
           "title": "그날의 남녀",
           "hint": "블로그스팟",
-          "href": "https://couplescore-auto.blogspot.com/"
+          "href": "https://couplescore-auto.blogspot.com/",
+          "hidden": true
         },
         {
           "id": "28",
           "title": "그날의 남녀",
           "hint": "티스토리",
-          "href": "https://couplescore.tistory.com/"
+          "href": "https://couplescore.tistory.com/",
+          "hidden": true
         },
         {
           "id": "29",
           "title": "숨숨마을",
           "hint": "블로그스팟",
-          "href": "https://sumsumvill.blogspot.com/"
+          "href": "https://sumsumvill.blogspot.com/",
+          "hidden": true
         },
         {
           "id": "30",
           "title": "숨숨마을",
           "hint": "티스토리",
-          "href": "https://sumsumvill.tistory.com/"
+          "href": "https://sumsumvill.tistory.com/",
+          "hidden": true
         },
         {
           "id": "31",
           "title": "쓰레드언니들",
           "hint": "블로그스팟",
-          "href": "https://threadssisyo.blogspot.com/"
+          "href": "https://threadssisyo.blogspot.com/",
+          "hidden": true
         },
         {
           "id": "32",
           "title": "쓰레드언니들",
           "hint": "티스토리",
-          "href": "https://threadssis.tistory.com/"
+          "href": "https://threadssis.tistory.com/",
+          "hidden": true
         },
         {
           "id": "33",
           "title": "서프위키",
           "hint": "블로그스팟",
-          "href": "https://surfwikikorea.blogspot.com/"
+          "href": "https://surfwikikorea.blogspot.com/",
+          "hidden": true
         },
         {
           "id": "34",
           "title": "서프위키",
           "hint": "티스토리",
-          "href": "https://surfwikikorea.tistory.com/"
+          "href": "https://surfwikikorea.tistory.com/",
+          "hidden": true
         },
         {
           "id": "35",
           "title": "본드 아카이브",
           "hint": "블로그스팟",
-          "href": "https://bondarchive.blogspot.com/"
+          "href": "https://bondarchive.blogspot.com/",
+          "hidden": true
         },
         {
           "id": "36",
           "title": "카케어노트 | 셀프세차·차량관리",
           "hint": "셀프세차 순서·광택·휠 관리 팁",
-          "href": "https://carcarenote-kr.blogspot.com/"
+          "href": "https://carcarenote-kr.blogspot.com/",
+          "hidden": true
         },
         {
           "id": "37",
           "title": "데일리 코디 레시피 | 3040 오늘 뭐 입지",
           "hint": "3040 여성 데일리 코디 조합",
-          "href": "https://dailycodirecipe.blogspot.com/"
+          "href": "https://dailycodirecipe.blogspot.com/",
+          "hidden": true
         }
       ]
     },
@@ -591,22 +628,26 @@
         {
           "id": "38",
           "title": "쓰레드언니들",
-          "href": "https://www.youtube.com/@waitmybabe"
+          "href": "https://www.youtube.com/@waitmybabe",
+          "hidden": true
         },
         {
           "id": "39",
           "title": "아브아르",
-          "href": "https://www.youtube.com/@%EC%95%84%EB%B8%8C%EC%95%84%EB%A5%B4AVOIR"
+          "href": "https://www.youtube.com/@%EC%95%84%EB%B8%8C%EC%95%84%EB%A5%B4AVOIR",
+          "hidden": true
         },
         {
           "id": "40",
           "title": "나두 Ai",
-          "href": "https://www.youtube.com/@nadooai-365"
+          "href": "https://www.youtube.com/@nadooai-365",
+          "hidden": true
         },
         {
           "id": "41",
           "title": "그날의 남녀",
-          "href": "https://www.youtube.com/@SpillEnglish-j9b"
+          "href": "https://www.youtube.com/@SpillEnglish-j9b",
+          "hidden": true
         }
       ]
     }

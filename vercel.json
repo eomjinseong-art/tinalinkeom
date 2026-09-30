@@ -950,6 +950,26 @@
       "source": "/n/43",
       "destination": "https://the-chosen-korean.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n43",
       "statusCode": 302
+    },
+    {
+      "source": "/044",
+      "destination": "https://language-study-snowy.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n44",
+      "statusCode": 302
+    },
+    {
+      "source": "/44",
+      "destination": "https://language-study-snowy.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n44",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/044",
+      "destination": "https://language-study-snowy.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n44",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/44",
+      "destination": "https://language-study-snowy.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n44",
+      "statusCode": 302
     }
   ],
   "rewrites": [

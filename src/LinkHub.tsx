@@ -7,6 +7,9 @@ import { SiteLinkCard } from "./SiteLinkCard";
 
 const MISSING_NUMBER = "없는 번호입니다.";
 
+/** Sections whose cards are all hidden keep their short links but get no header on the hub. */
+const visibleSections = hubSections.filter((section) => section.links.some((link) => !link.hidden));
+
 function revealLinkCard(card: HTMLElement): void {
   let node: HTMLElement | null = card.parentElement;
   while (node) {
@@ -119,7 +122,7 @@ export function LinkHub() {
         ) : null}
       </form>
       <div className="bio-links">
-        {hubSections.map((section) => (
+        {visibleSections.map((section) => (
           <Fragment key={section.title}>
             <h2 className="section-title">{section.title}</h2>
             {section.intro ? <p className="section-intro">{section.intro}</p> : null}

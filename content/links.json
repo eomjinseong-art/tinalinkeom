@@ -6,8 +6,9 @@
         {
           "id": "01",
           "title": "나두 Ai",
-          "hint": "AI 도구 가이드 · 캐러셀 · 나두 패밀리 모음",
-          "href": "https://ai-tools-site-liart-one.vercel.app/"
+          "hint": "AI 도구 30개 사용법·가격·비교 · 캐러셀 · 나두 패밀리 모음",
+          "href": "https://ai-tools-site-liart-one.vercel.app/",
+          "spotlight": true
         },
         {
           "id": "02",
@@ -61,7 +62,7 @@
     },
     {
       "title": "나두 패밀리",
-      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화까지, 하루를 AI와 같이 채워요.",
+      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화·고양이·쇼핑·컨텐츠까지, 하루를 AI와 같이 채워요.",
       "tabs": [
         {
           "key": "language",
@@ -90,6 +91,27 @@
           "emoji": "🎬",
           "color": "#7a4fd0",
           "hint": "AI와 정리한 영화·시리즈 아카이브"
+        },
+        {
+          "key": "cat",
+          "title": "나두캣",
+          "emoji": "🐱",
+          "color": "#e0628f",
+          "hint": "AI와 함께하는 고양이 일상·기록·용품"
+        },
+        {
+          "key": "shopping",
+          "title": "나두쇼핑",
+          "emoji": "🛍️",
+          "color": "#1f9bb8",
+          "hint": "AI가 골라 둔 패션·서핑·자동차 용품"
+        },
+        {
+          "key": "content",
+          "title": "나두컨텐츠",
+          "emoji": "🎮",
+          "color": "#9a3b3b",
+          "hint": "AI와 즐기는 커플 콘텐츠·미니게임"
         }
       ],
       "links": [
@@ -154,6 +176,76 @@
           "title": "분노의 질주 아카이브",
           "hint": "시리즈 영화·악당·차량 74대 아카이브",
           "href": "https://ff-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
+          "id": "45",
+          "title": "숨숨마을",
+          "hint": "고양이 집사 블로그",
+          "href": "https://sumsumvill.blogspot.com/",
+          "tab": "cat"
+        },
+        {
+          "id": "46",
+          "title": "일기쓰는 고양이",
+          "hint": "고양이 컨디션 기록",
+          "href": "https://cat-condition-log.vercel.app/",
+          "tab": "cat"
+        },
+        {
+          "id": "47",
+          "title": "고양이 용품",
+          "hint": "숨숨마을 고양이 용품 큐레이션",
+          "href": "https://b-cat-cpang.vercel.app/",
+          "tab": "cat"
+        },
+        {
+          "id": "48",
+          "title": "아브아르(AVOIR)",
+          "hint": "감성 여성 오피스·데일리룩",
+          "href": "https://avoir24.com/",
+          "tab": "shopping"
+        },
+        {
+          "id": "49",
+          "title": "서핑용품",
+          "hint": "서프위키Ai 서핑 쇼핑몰",
+          "href": "https://surfwikikoreacpang.vercel.app/",
+          "tab": "shopping"
+        },
+        {
+          "id": "50",
+          "title": "고양이 용품",
+          "hint": "숨숨마을 고양이 용품 큐레이션",
+          "href": "https://b-cat-cpang.vercel.app/",
+          "tab": "shopping"
+        },
+        {
+          "id": "51",
+          "title": "자동차 용품",
+          "hint": "오토픽스 자동차 용품 큐레이션",
+          "href": "https://car-parts-cpang.vercel.app/",
+          "tab": "shopping"
+        },
+        {
+          "id": "52",
+          "title": "그날의 남녀",
+          "hint": "커플 솔루션 마켓",
+          "href": "https://a-couple-score-cpang.vercel.app/",
+          "tab": "content"
+        },
+        {
+          "id": "53",
+          "title": "로빈스게임월드",
+          "hint": "미니게임 모음",
+          "href": "https://robingames.vercel.app/",
+          "tab": "content"
+        },
+        {
+          "id": "54",
+          "title": "더 초즌(The Chosen)",
+          "hint": "한국어 가이드 · 시즌1~5 줄거리·인물·성경 구절",
+          "href": "https://the-chosen-korean.vercel.app/",
           "tab": "movie"
         }
       ]

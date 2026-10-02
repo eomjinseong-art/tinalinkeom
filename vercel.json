@@ -1670,6 +1670,26 @@
       "source": "/n/79",
       "destination": "https://couple-score.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n79",
       "statusCode": 302
+    },
+    {
+      "source": "/080",
+      "destination": "https://robingames.vercel.app/guide/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n80",
+      "statusCode": 302
+    },
+    {
+      "source": "/80",
+      "destination": "https://robingames.vercel.app/guide/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n80",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/080",
+      "destination": "https://robingames.vercel.app/guide/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n80",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/80",
+      "destination": "https://robingames.vercel.app/guide/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n80",
+      "statusCode": 302
     }
   ],
   "rewrites": [

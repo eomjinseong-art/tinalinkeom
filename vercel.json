@@ -1690,6 +1690,26 @@
       "source": "/n/80",
       "destination": "https://robingames.vercel.app/guide/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n80",
       "statusCode": 302
+    },
+    {
+      "source": "/081",
+      "destination": "https://transformers-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n81",
+      "statusCode": 302
+    },
+    {
+      "source": "/81",
+      "destination": "https://transformers-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n81",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/081",
+      "destination": "https://transformers-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n81",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/81",
+      "destination": "https://transformers-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n81",
+      "statusCode": 302
     }
   ],
   "rewrites": [

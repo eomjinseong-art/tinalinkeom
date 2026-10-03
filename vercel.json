@@ -1710,6 +1710,66 @@
       "source": "/n/81",
       "destination": "https://transformers-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n81",
       "statusCode": 302
+    },
+    {
+      "source": "/082",
+      "destination": "https://fordvferrari-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n82",
+      "statusCode": 302
+    },
+    {
+      "source": "/82",
+      "destination": "https://fordvferrari-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n82",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/082",
+      "destination": "https://fordvferrari-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n82",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/82",
+      "destination": "https://fordvferrari-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n82",
+      "statusCode": 302
+    },
+    {
+      "source": "/083",
+      "destination": "https://rush-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n83",
+      "statusCode": 302
+    },
+    {
+      "source": "/83",
+      "destination": "https://rush-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n83",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/083",
+      "destination": "https://rush-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n83",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/83",
+      "destination": "https://rush-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n83",
+      "statusCode": 302
+    },
+    {
+      "source": "/084",
+      "destination": "https://granturismo-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n84",
+      "statusCode": 302
+    },
+    {
+      "source": "/84",
+      "destination": "https://granturismo-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n84",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/084",
+      "destination": "https://granturismo-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n84",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/84",
+      "destination": "https://granturismo-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n84",
+      "statusCode": 302
     }
   ],
   "rewrites": [

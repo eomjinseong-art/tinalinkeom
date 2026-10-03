@@ -207,6 +207,27 @@
           "tab": "movie"
         },
         {
+          "id": "82",
+          "title": "포드 V 페라리 아카이브",
+          "hint": "포드 V 페라리(2019) · 1966 르망 실화 + 등장 차량 13대",
+          "href": "https://fordvferrari-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
+          "id": "83",
+          "title": "러쉬 아카이브",
+          "hint": "러시: 더 라이벌(2013) · 헌트 vs 라우다 1976 F1 + 차량 13대",
+          "href": "https://rush-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
+          "id": "84",
+          "title": "그란 투리스모 아카이브",
+          "hint": "그란 투리스모(2023) · 게이머 출신 레이서 실화 + 차량 17대",
+          "href": "https://granturismo-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
           "id": "45",
           "title": "숨숨마을",
           "hint": "고양이 집사 블로그",

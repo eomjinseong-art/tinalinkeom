@@ -1770,6 +1770,26 @@
       "source": "/n/84",
       "destination": "https://granturismo-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n84",
       "statusCode": 302
+    },
+    {
+      "source": "/085",
+      "destination": "https://nadoo-myth.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n85",
+      "statusCode": 302
+    },
+    {
+      "source": "/85",
+      "destination": "https://nadoo-myth.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n85",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/085",
+      "destination": "https://nadoo-myth.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n85",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/85",
+      "destination": "https://nadoo-myth.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n85",
+      "statusCode": 302
     }
   ],
   "rewrites": [

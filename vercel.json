@@ -1790,6 +1790,26 @@
       "source": "/n/85",
       "destination": "https://nadoo-myth.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n85",
       "statusCode": 302
+    },
+    {
+      "source": "/086",
+      "destination": "https://rome-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n86",
+      "statusCode": 302
+    },
+    {
+      "source": "/86",
+      "destination": "https://rome-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n86",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/086",
+      "destination": "https://rome-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n86",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/86",
+      "destination": "https://rome-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n86",
+      "statusCode": 302
     }
   ],
   "rewrites": [

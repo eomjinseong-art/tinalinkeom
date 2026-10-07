@@ -320,6 +320,20 @@
           "tab": "content"
         },
         {
+          "id": "87",
+          "title": "대한민국이야기",
+          "hint": "남한 지역·지명·왕·관련 영화를 쉽게 · 클릭 지도",
+          "href": "https://korea-stories.vercel.app/",
+          "tab": "content"
+        },
+        {
+          "id": "88",
+          "title": "페르시아이야기",
+          "hint": "페르시아 역사 · 왕·전쟁·장소 · 관련 영화 · 나두 역사 연결",
+          "href": "https://persia-stories.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "54",
           "title": "더 초즌(The Chosen)",
           "hint": "한국어 가이드 · 시즌1~5 줄거리·인물·성경 구절",

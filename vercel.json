@@ -1910,6 +1910,26 @@
       "source": "/n/91",
       "destination": "https://philosophy-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n91",
       "statusCode": 302
+    },
+    {
+      "source": "/092",
+      "destination": "https://nadoo-timeline.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n92",
+      "statusCode": 302
+    },
+    {
+      "source": "/92",
+      "destination": "https://nadoo-timeline.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n92",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/092",
+      "destination": "https://nadoo-timeline.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n92",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/92",
+      "destination": "https://nadoo-timeline.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n92",
+      "statusCode": 302
     }
   ],
   "rewrites": [

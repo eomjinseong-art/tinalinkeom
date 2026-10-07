@@ -62,7 +62,7 @@
     },
     {
       "title": "나두 패밀리",
-      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화·고양이·쇼핑·컨텐츠·블로그·유튜브·틱톡까지, 하루를 AI와 같이 채워요.",
+      "intro": "나두 — 나의 모든 일상을 AI와 함께. 공부·운동·자동차·영화·고양이·쇼핑·컨텐츠·게임·블로그·유튜브·틱톡까지, 하루를 AI와 같이 채워요.",
       "tabs": [
         {
           "key": "language",
@@ -109,9 +109,16 @@
         {
           "key": "content",
           "title": "나두컨텐츠",
-          "emoji": "🎮",
+          "emoji": "📚",
           "color": "#9a3b3b",
-          "hint": "AI와 즐기는 커플 콘텐츠·미니게임"
+          "hint": "AI와 함께 읽는 신화·역사·커플 콘텐츠"
+        },
+        {
+          "key": "games",
+          "title": "나두게임즈",
+          "emoji": "🎮",
+          "color": "#b423a3",
+          "hint": "AI와 즐기는 병맛 미니게임·게임 가이드"
         },
         {
           "key": "blog",
@@ -289,14 +296,14 @@
           "title": "나두게임즈 Nadoo Games",
           "hint": "방구 뀌고 가는 병맛 미니게임 💨 Silly fart games for kids",
           "href": "https://robingames.vercel.app/",
-          "tab": "content"
+          "tab": "games"
         },
         {
           "id": "80",
           "title": "나두 게임 가이드",
           "hint": "보드게임·카드게임 규칙을 초보자도 한 판씩 따라 할 수 있게 정리한 가이드 📚",
           "href": "https://robingames.vercel.app/guide/",
-          "tab": "content"
+          "tab": "games"
         },
         {
           "id": "85",

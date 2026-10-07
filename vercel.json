@@ -1813,42 +1813,82 @@
     },
     {
       "source": "/087",
-      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
+      "destination": "https://greece-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
       "statusCode": 302
     },
     {
       "source": "/87",
-      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
+      "destination": "https://greece-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
       "statusCode": 302
     },
     {
       "source": "/n/087",
-      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
+      "destination": "https://greece-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
       "statusCode": 302
     },
     {
       "source": "/n/87",
-      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
+      "destination": "https://greece-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n87",
       "statusCode": 302
     },
     {
       "source": "/088",
-      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
+      "destination": "https://egypt-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
       "statusCode": 302
     },
     {
       "source": "/88",
-      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
+      "destination": "https://egypt-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
       "statusCode": 302
     },
     {
       "source": "/n/088",
-      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
+      "destination": "https://egypt-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
       "statusCode": 302
     },
     {
       "source": "/n/88",
-      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
+      "destination": "https://egypt-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n88",
+      "statusCode": 302
+    },
+    {
+      "source": "/089",
+      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n89",
+      "statusCode": 302
+    },
+    {
+      "source": "/89",
+      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n89",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/089",
+      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n89",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/89",
+      "destination": "https://korea-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n89",
+      "statusCode": 302
+    },
+    {
+      "source": "/090",
+      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n90",
+      "statusCode": 302
+    },
+    {
+      "source": "/90",
+      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n90",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/090",
+      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n90",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/90",
+      "destination": "https://persia-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n90",
       "statusCode": 302
     }
   ],

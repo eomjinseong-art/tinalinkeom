@@ -1950,6 +1950,26 @@
       "source": "/n/93",
       "destination": "https://iliad-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n93",
       "statusCode": 302
+    },
+    {
+      "source": "/094",
+      "destination": "https://nadoo-onepiece.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n94",
+      "statusCode": 302
+    },
+    {
+      "source": "/94",
+      "destination": "https://nadoo-onepiece.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n94",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/094",
+      "destination": "https://nadoo-onepiece.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n94",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/94",
+      "destination": "https://nadoo-onepiece.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n94",
+      "statusCode": 302
     }
   ],
   "rewrites": [

@@ -1930,6 +1930,26 @@
       "source": "/n/92",
       "destination": "https://nadoo-timeline.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n92",
       "statusCode": 302
+    },
+    {
+      "source": "/093",
+      "destination": "https://iliad-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n93",
+      "statusCode": 302
+    },
+    {
+      "source": "/93",
+      "destination": "https://iliad-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n93",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/093",
+      "destination": "https://iliad-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n93",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/93",
+      "destination": "https://iliad-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n93",
+      "statusCode": 302
     }
   ],
   "rewrites": [

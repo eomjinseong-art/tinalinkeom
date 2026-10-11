@@ -2030,6 +2030,26 @@
       "source": "/n/97",
       "destination": "https://nadoo-world.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n97",
       "statusCode": 302
+    },
+    {
+      "source": "/098",
+      "destination": "https://nadoo-arts.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n98",
+      "statusCode": 302
+    },
+    {
+      "source": "/98",
+      "destination": "https://nadoo-arts.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n98",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/098",
+      "destination": "https://nadoo-arts.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n98",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/98",
+      "destination": "https://nadoo-arts.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n98",
+      "statusCode": 302
     }
   ],
   "rewrites": [

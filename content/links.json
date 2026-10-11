@@ -383,6 +383,13 @@
           "tab": "content"
         },
         {
+          "id": "98",
+          "title": "나두예술",
+          "hint": "이탈리아·프랑스 음악과 그림을 쉬운 한국어로 · 음악관 20명 · 미술관 22명 · 연표·관계도·퀴즈 · Music & art 🎨🎻",
+          "href": "https://nadoo-arts.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "92",
           "title": "나두연표",
           "hint": "세계사 vs 한반도, 같은 해 무슨 일이? 한눈에 보는 비교 연표 · World vs Korea timeline",

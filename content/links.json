@@ -376,6 +376,13 @@
           "tab": "content"
         },
         {
+          "id": "97",
+          "title": "나두세계",
+          "hint": "지도·수도·국기로 배우는 세계 상식 · 197개국 · 헷갈리는 국기 · 퀴즈 500+ · World atlas & quiz 🌍",
+          "href": "https://nadoo-world.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "92",
           "title": "나두연표",
           "hint": "세계사 vs 한반도, 같은 해 무슨 일이? 한눈에 보는 비교 연표 · World vs Korea timeline",

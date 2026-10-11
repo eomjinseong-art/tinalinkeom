@@ -320,6 +320,13 @@
           "tab": "content"
         },
         {
+          "id": "95",
+          "title": "게르만이야기",
+          "hint": "로마에 맞선 숲의 전사들 · 토이토부르크·민족 대이동·카롤루스 대제 · Germanic peoples vs Rome 🌲",
+          "href": "https://germanic-stories.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "87",
           "title": "그리스이야기",
           "hint": "그리스 역사를 쉽게 · 폴리스·전쟁 · 관련 영화 · 나두신화 연결 🏛️",

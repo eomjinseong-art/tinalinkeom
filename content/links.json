@@ -327,6 +327,13 @@
           "tab": "content"
         },
         {
+          "id": "96",
+          "title": "바이킹이야기",
+          "hint": "롱쉽을 타고 온 북쪽의 사람들 · 린디스판·알프레드·노르망디·빈란드·영화 38편 · Viking Age ⚔️",
+          "href": "https://viking-stories.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "87",
           "title": "그리스이야기",
           "hint": "그리스 역사를 쉽게 · 폴리스·전쟁 · 관련 영화 · 나두신화 연결 🏛️",

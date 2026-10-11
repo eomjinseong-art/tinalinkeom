@@ -1990,6 +1990,26 @@
       "source": "/n/95",
       "destination": "https://germanic-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n95",
       "statusCode": 302
+    },
+    {
+      "source": "/096",
+      "destination": "https://viking-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n96",
+      "statusCode": 302
+    },
+    {
+      "source": "/96",
+      "destination": "https://viking-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n96",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/096",
+      "destination": "https://viking-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n96",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/96",
+      "destination": "https://viking-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n96",
+      "statusCode": 302
     }
   ],
   "rewrites": [

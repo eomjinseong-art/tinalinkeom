@@ -1970,6 +1970,26 @@
       "source": "/n/94",
       "destination": "https://nadoo-onepiece.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n94",
       "statusCode": 302
+    },
+    {
+      "source": "/095",
+      "destination": "https://germanic-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n95",
+      "statusCode": 302
+    },
+    {
+      "source": "/95",
+      "destination": "https://germanic-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n95",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/095",
+      "destination": "https://germanic-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n95",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/95",
+      "destination": "https://germanic-stories.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n95",
+      "statusCode": 302
     }
   ],
   "rewrites": [

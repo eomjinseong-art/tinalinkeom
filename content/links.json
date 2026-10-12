@@ -584,6 +584,13 @@
           "hint": "우리 커플 궁합·관계 개선",
           "href": "https://couple-score.vercel.app/",
           "tab": "content"
+        },
+        {
+          "id": "99",
+          "title": "나두인물 (Nadoo People)",
+          "hint": "영화로 만나는 실존 인물 · 하워드 휴즈 × 에비에이터",
+          "href": "https://nadoo-people.vercel.app/",
+          "tab": "movie"
         }
       ]
     },

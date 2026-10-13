@@ -390,6 +390,13 @@
           "tab": "content"
         },
         {
+          "id": "100",
+          "title": "나두삼국지",
+          "hint": "정사 vs 연의, 소설 각색까지 짚는 삼국지 · 사건 44 · 인물 113 · 가계도·지도·사자성어 51 · 그때 한반도는? · 퀴즈 346 · Three Kingdoms ⚔️",
+          "href": "https://nadoo-samguk.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "92",
           "title": "나두연표",
           "hint": "세계사 vs 한반도, 같은 해 무슨 일이? 한눈에 보는 비교 연표 · World vs Korea timeline",

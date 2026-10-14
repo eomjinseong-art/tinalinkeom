@@ -235,6 +235,13 @@
           "tab": "movie"
         },
         {
+          "id": "47",
+          "title": "고양이 용품",
+          "hint": "숨숨마을 고양이 용품 큐레이션",
+          "href": "https://b-cat-cpang.vercel.app/",
+          "tab": "cat"
+        },
+        {
           "id": "45",
           "title": "숨숨마을",
           "hint": "고양이 집사 블로그",
@@ -246,13 +253,6 @@
           "title": "일기쓰는 고양이",
           "hint": "고양이 컨디션 기록",
           "href": "https://cat-condition-log.vercel.app/",
-          "tab": "cat"
-        },
-        {
-          "id": "47",
-          "title": "고양이 용품",
-          "hint": "숨숨마을 고양이 용품 큐레이션",
-          "href": "https://b-cat-cpang.vercel.app/",
           "tab": "cat"
         },
         {

@@ -404,6 +404,13 @@
           "tab": "content"
         },
         {
+          "id": "102",
+          "title": "나두 바 아카데미 🍸",
+          "hint": "칵테일·위스키 실전 연습 (성인용) · Cocktail & whiskey practice (adults)",
+          "href": "https://robingames.vercel.app/bar/",
+          "tab": "content"
+        },
+        {
           "id": "92",
           "title": "나두연표",
           "hint": "세계사 vs 한반도, 같은 해 무슨 일이? 한눈에 보는 비교 연표 · World vs Korea timeline",

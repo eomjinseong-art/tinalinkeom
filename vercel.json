@@ -2052,6 +2052,26 @@
       "statusCode": 302
     },
     {
+      "source": "/099",
+      "destination": "https://nadoo-people.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n99",
+      "statusCode": 302
+    },
+    {
+      "source": "/99",
+      "destination": "https://nadoo-people.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n99",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/099",
+      "destination": "https://nadoo-people.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n99",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/99",
+      "destination": "https://nadoo-people.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n99",
+      "statusCode": 302
+    },
+    {
       "source": "/100",
       "destination": "https://nadoo-samguk.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n100",
       "statusCode": 302
@@ -2060,11 +2080,59 @@
       "source": "/n/100",
       "destination": "https://nadoo-samguk.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n100",
       "statusCode": 302
+    },
+    {
+      "source": "/101",
+      "destination": "https://nadoo-musical.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n101",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/101",
+      "destination": "https://nadoo-musical.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n101",
+      "statusCode": 302
+    },
+    {
+      "source": "/102",
+      "destination": "https://robingames.vercel.app/bar/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n102",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/102",
+      "destination": "https://robingames.vercel.app/bar/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n102",
+      "statusCode": 302
+    },
+    {
+      "source": "/103",
+      "destination": "https://robingames.vercel.app/garage/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n103",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/103",
+      "destination": "https://robingames.vercel.app/garage/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n103",
+      "statusCode": 302
+    },
+    {
+      "source": "/104",
+      "destination": "https://robingames.vercel.app/cellar/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n104",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/104",
+      "destination": "https://robingames.vercel.app/cellar/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n104",
+      "statusCode": 302
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!guides/).*)",
+      "source": "/novel",
+      "destination": "/api/novel"
+    },
+    {
+      "source": "/novel/",
+      "destination": "/api/novel"
+    },
+    {
+      "source": "/((?!guides/|api/).*)",
       "destination": "/index.html"
     }
   ]

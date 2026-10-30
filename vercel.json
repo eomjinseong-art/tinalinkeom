@@ -2170,6 +2170,14 @@
       "destination": "/api/novel2"
     },
     {
+      "source": "/novel-b2",
+      "destination": "/api/novel-b2"
+    },
+    {
+      "source": "/novel-b2/",
+      "destination": "/api/novel-b2"
+    },
+    {
       "source": "/((?!guides/|api/).*)",
       "destination": "/index.html"
     }

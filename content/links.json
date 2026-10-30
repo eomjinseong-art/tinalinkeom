@@ -435,12 +435,11 @@
         },
         {
           "id": "107",
-          "title": "두 번째 책 (준비 중)",
-          "hint": "다음 장편소설 웹 리더 · 준비 중",
+          "title": "《아뎀 — 숨의 노래》 (비밀번호)",
+          "hint": "귀를 잃어 가는 오르간 복원가와 1944년 오르간 속에 숨은 아이들 · 장편소설 웹 리더 🔒",
           "href": "https://tinalinkeom.vercel.app/novel-b2",
           "tab": "novel",
-          "book": "책 2. 두 번째 책",
-          "comingSoon": true
+          "book": "책 2. 아뎀 — 숨의 노래"
         },
         {
           "id": "103",

@@ -10,6 +10,10 @@ export type HubLink = {
   tab?: string;
   /** Flagship card: rendered as the large, brand-gradient hero card (대표). */
   spotlight?: boolean;
+  /** Optional group heading inside a tab (e.g. "책 1. …"); cards with the same value render together. */
+  book?: string;
+  /** Shown as "준비 중" and not clickable. */
+  comingSoon?: boolean;
 };
 
 export type HubTab = {
@@ -37,6 +41,8 @@ type RawLink = {
   hidden?: unknown;
   tab?: unknown;
   spotlight?: unknown;
+  book?: unknown;
+  comingSoon?: unknown;
 };
 
 function loadTabs(raw: unknown, sectionTitle: string): HubTab[] | undefined {
@@ -118,7 +124,9 @@ export function loadCatalog(data: unknown): HubSection[] {
       } else if (link.tab !== undefined) {
         throw new Error(`Card ${link.id} has a tab but ${title} has no tabs`);
       }
-      return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden, tab, spotlight };
+      const book = typeof link.book === "string" && link.book.trim() ? link.book : undefined;
+      const comingSoon = link.comingSoon === true ? true : undefined;
+      return { id: link.id, title: link.title, hint, href: link.href, section: title, hidden, tab, spotlight, book, comingSoon };
     });
 
     const rawIntro = (section as { intro?: unknown }).intro;

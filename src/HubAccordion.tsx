@@ -1,6 +1,30 @@
 import { useState, type CSSProperties } from "react";
-import type { HubSection } from "./shortLinks";
+import type { HubLink, HubSection } from "./shortLinks";
 import { SiteLinkCard } from "./SiteLinkCard";
+
+function renderCard(link: HubLink) {
+  return (
+    <SiteLinkCard
+      key={link.id}
+      id={link.id}
+      title={link.title}
+      hint={link.hint}
+      href={link.href}
+      comingSoon={link.comingSoon}
+    />
+  );
+}
+
+/** Keeps card order; consecutive/related cards sharing `book` are grouped under one heading. */
+function groupByBook(links: HubLink[]): { book?: string; links: HubLink[] }[] {
+  const groups: { book?: string; links: HubLink[] }[] = [];
+  for (const link of links) {
+    const existing = link.book ? groups.find((g) => g.book === link.book) : undefined;
+    if (existing) existing.links.push(link);
+    else groups.push({ book: link.book, links: [link] });
+  }
+  return groups;
+}
 
 /** Accordion tabs for a section with `tabs`: tap a tab to open its links; only one is open at a time. */
 export function HubAccordion({ section }: { section: HubSection & { tabs: NonNullable<HubSection["tabs"]> } }) {
@@ -40,9 +64,16 @@ export function HubAccordion({ section }: { section: HubSection & { tabs: NonNul
               </span>
             </button>
             <div id={panelId} className="hub-tab-panel" data-accordion-panel hidden={!expanded}>
-              {links.map((link) => (
-                <SiteLinkCard key={link.id} id={link.id} title={link.title} hint={link.hint} href={link.href} />
-              ))}
+              {groupByBook(links).map((group, gi) =>
+                group.book ? (
+                  <div key={`book-${gi}`} className="hub-book" data-book={group.book}>
+                    <h4 className="hub-book-title">{group.book}</h4>
+                    {group.links.map(renderCard)}
+                  </div>
+                ) : (
+                  group.links.map(renderCard)
+                ),
+              )}
             </div>
           </div>
         );

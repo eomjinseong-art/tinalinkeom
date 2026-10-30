@@ -2140,6 +2140,16 @@
       "source": "/n/106",
       "destination": "https://tinalinkeom.vercel.app/novel2?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n106",
       "statusCode": 302
+    },
+    {
+      "source": "/107",
+      "destination": "https://tinalinkeom.vercel.app/novel-b2?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n107",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/107",
+      "destination": "https://tinalinkeom.vercel.app/novel-b2?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n107",
+      "statusCode": 302
     }
   ],
   "rewrites": [

@@ -16,7 +16,10 @@ export function SiteLinkCard({
   hint,
   href,
   spotlight = false,
+  comingSoon = false,
 }: {
+  /** Not clickable; shows a 준비 중 badge. */
+  comingSoon?: boolean;
   id?: string;
   title: string;
   hint?: string;
@@ -62,6 +65,21 @@ export function SiteLinkCard({
     id: id ? `link-${id}` : undefined,
     "data-link-id": id ? String(Number(id)) : undefined,
   };
+
+  if (comingSoon) {
+    return (
+      <div {...shared} className={`${className} link-card-soon`} aria-disabled="true">
+        <span className="link-main">
+          {id ? <span className="link-id">{id}</span> : null}
+          <span className="link-copy">
+            <span className="link-label">{title}</span>
+            {hint ? <span className="link-hint">{hint}</span> : null}
+          </span>
+        </span>
+        <span className="link-soon-badge">준비 중</span>
+      </div>
+    );
+  }
 
   if (isInternalHref(href)) {
     return (

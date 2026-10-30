@@ -114,6 +114,13 @@
           "hint": "AI와 함께 읽는 신화·역사·커플 콘텐츠"
         },
         {
+          "key": "novel",
+          "title": "나두노벨",
+          "emoji": "📖",
+          "color": "#6b4a8f",
+          "hint": "AI와 함께 쓰는 장편소설 · 책별 웹 리더"
+        },
+        {
           "key": "games",
           "title": "나두게임즈",
           "emoji": "🎮",
@@ -415,14 +422,25 @@
           "title": "《Scacco d'Amore》 소설 (비밀번호)",
           "hint": "사랑의 체크메이트 · 장편소설 웹 리더 🔒",
           "href": "https://tinalinkeom.vercel.app/novel",
-          "tab": "content"
+          "tab": "novel",
+          "book": "책 1. Scacco d'Amore"
         },
         {
           "id": "106",
           "title": "《Scacco d'Amore》 소설 버전 2 (비밀번호)",
           "hint": "사랑의 체크메이트 · 장편소설 버전 2 웹 리더 🔒",
           "href": "https://tinalinkeom.vercel.app/novel2",
-          "tab": "content"
+          "tab": "novel",
+          "book": "책 1. Scacco d'Amore"
+        },
+        {
+          "id": "107",
+          "title": "두 번째 책 (준비 중)",
+          "hint": "다음 장편소설 웹 리더 · 준비 중",
+          "href": "https://tinalinkeom.vercel.app/novel-b2",
+          "tab": "novel",
+          "book": "책 2. 두 번째 책",
+          "comingSoon": true
         },
         {
           "id": "103",

@@ -882,3 +882,8 @@ body {
     animation: none;
   }
 }
+
+.hub-book { display: grid; gap: inherit; margin: 0.25rem 0 0.75rem; }
+.hub-book-title { margin: 0.5rem 0 0.25rem; font-size: 0.95rem; font-weight: 700; color: var(--tab-color, inherit); }
+.link-card-soon { opacity: 0.6; cursor: not-allowed; pointer-events: none; }
+.link-soon-badge { font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }

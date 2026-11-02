@@ -2150,6 +2150,16 @@
       "source": "/n/107",
       "destination": "https://tinalinkeom.vercel.app/novel-b2?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n107",
       "statusCode": 302
+    },
+    {
+      "source": "/108",
+      "destination": "https://nadoo-worldwars.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n108",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/108",
+      "destination": "https://nadoo-worldwars.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n108",
+      "statusCode": 302
     }
   ],
   "rewrites": [

@@ -463,6 +463,13 @@
           "tab": "content"
         },
         {
+          "id": "108",
+          "title": "세계대전이야기",
+          "hint": "1차·2차 세계대전 요약·진영 지도·연표·전투·영화",
+          "href": "https://nadoo-worldwars.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "94",
           "title": "나두원피스",
           "hint": "동블루에서 에그헤드까지, 아크로 읽는 원피스 · 인물·관계·명대사·악마의 열매·현상금 · One Piece arc guide 🏴‍☠️",

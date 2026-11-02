@@ -243,32 +243,32 @@
     },
     {
       "source": "/009",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n9",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/09",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n9",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/9",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n9",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/n/009",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n9",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/n/09",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n9",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/n/9",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n9",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
@@ -1033,22 +1033,22 @@
     },
     {
       "source": "/048",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n48",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/48",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n48",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/n/048",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n48",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
       "source": "/n/48",
-      "destination": "https://avoir24.com/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n48",
+      "destination": "https://avoir24.com/?utm_source=youtube&utm_medium=tinalinkeom&utm_campaign=channel_link",
       "statusCode": 302
     },
     {
@@ -2160,6 +2160,36 @@
       "source": "/n/109",
       "destination": "https://tinalinkeom.vercel.app/novel-b3?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n109",
       "statusCode": 302
+    },
+    {
+      "source": "/110",
+      "destination": "https://italian-motors.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n110",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/110",
+      "destination": "https://italian-motors.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n110",
+      "statusCode": 302
+    },
+    {
+      "source": "/111",
+      "destination": "https://tinalinkeom.vercel.app/novel-b4?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n111",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/111",
+      "destination": "https://tinalinkeom.vercel.app/novel-b4?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n111",
+      "statusCode": 302
+    },
+    {
+      "source": "/112",
+      "destination": "https://tinalinkeom.vercel.app/novel-b5?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n112",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/112",
+      "destination": "https://tinalinkeom.vercel.app/novel-b5?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n112",
+      "statusCode": 302
     }
   ],
   "rewrites": [
@@ -2186,6 +2216,22 @@
     {
       "source": "/novel-b3/",
       "destination": "/api/novel-b3"
+    },
+    {
+      "source": "/novel-b4",
+      "destination": "/api/novel-b4"
+    },
+    {
+      "source": "/novel-b4/",
+      "destination": "/api/novel-b4"
+    },
+    {
+      "source": "/novel-b5",
+      "destination": "/api/novel-b5"
+    },
+    {
+      "source": "/novel-b5/",
+      "destination": "/api/novel-b5"
     },
     {
       "source": "/((?!guides/|api/).*)",

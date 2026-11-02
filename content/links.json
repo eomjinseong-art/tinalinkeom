@@ -449,6 +449,22 @@
           "book": "책 3. 등불 시리즈 1 · 빛이 있으라"
         },
         {
+          "id": "111",
+          "title": "《질그릇》",
+          "hint": "실패한 창업가가 청도 옹기 장인 곁에서 한 봄 동안 다시 빚어지는 이야기 · 등불 시리즈 2 · 장편소설 웹 리더",
+          "href": "https://tinalinkeom.vercel.app/novel-b4",
+          "tab": "novel",
+          "book": "책 4. 등불 시리즈 2 · 질그릇"
+        },
+        {
+          "id": "112",
+          "title": "《누룩》",
+          "hint": "자퇴한 열일곱 살이 새벽 사워도우 빵집에서 처음 만나는 성경 · 등불 시리즈 3 · 장편소설 웹 리더",
+          "href": "https://tinalinkeom.vercel.app/novel-b5",
+          "tab": "novel",
+          "book": "책 5. 등불 시리즈 3 · 누룩"
+        },
+        {
           "id": "103",
           "title": "나두 모터스 공방 🔧",
           "hint": "브레이크·시동·과열 고장 진단 & 4행정 엔진 조립 · Car repair & engine simulator",

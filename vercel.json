@@ -2150,6 +2150,16 @@
       "source": "/n/108",
       "destination": "https://nadoo-worldwars.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n108",
       "statusCode": 302
+    },
+    {
+      "source": "/109",
+      "destination": "https://tinalinkeom.vercel.app/novel-b3?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n109",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/109",
+      "destination": "https://tinalinkeom.vercel.app/novel-b3?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n109",
+      "statusCode": 302
     }
   ],
   "rewrites": [
@@ -2168,6 +2178,14 @@
     {
       "source": "/novel-b2/",
       "destination": "/api/novel-b2"
+    },
+    {
+      "source": "/novel-b3",
+      "destination": "/api/novel-b3"
+    },
+    {
+      "source": "/novel-b3/",
+      "destination": "/api/novel-b3"
     },
     {
       "source": "/((?!guides/|api/).*)",

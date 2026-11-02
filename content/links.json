@@ -83,7 +83,7 @@
           "title": "나두카",
           "emoji": "🚗",
           "color": "#d27a22",
-          "hint": "AI와 둘러보는 영국차·미국차"
+          "hint": "AI와 둘러보는 영국차·미국차·이탈리아차"
         },
         {
           "key": "movie",
@@ -183,6 +183,13 @@
           "title": "미국차 컬렉션 아카이브",
           "hint": "미국 자동차 14개 브랜드 177개 모델",
           "href": "https://usa-motors.vercel.app/",
+          "tab": "car"
+        },
+        {
+          "id": "110",
+          "title": "이탈리아 차량 아카이브",
+          "hint": "이탈리아 자동차",
+          "href": "https://italian-motors.vercel.app/",
           "tab": "car"
         },
         {

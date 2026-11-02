@@ -426,20 +426,20 @@
           "book": "책 1. Scacco d'Amore"
         },
         {
-          "id": "109",
-          "title": "《빛이 있으라》",
-          "hint": "등대원 아버지가 남긴 23권의 일지로 처음 만나는 성경 · 등불 시리즈 1 · 장편소설 웹 리더",
-          "href": "https://tinalinkeom.vercel.app/novel-b3",
-          "tab": "novel",
-          "book": "책 3. 등불 시리즈 1 · 빛이 있으라"
-        },
-        {
           "id": "107",
           "title": "《아뎀: 숨의 노래》",
           "hint": "귀를 잃어 가는 오르간 복원가와 1944년 오르간 속에 숨은 아이들 · 장편소설 웹 리더",
           "href": "https://tinalinkeom.vercel.app/novel-b2",
           "tab": "novel",
           "book": "책 2. 아뎀 — 숨의 노래"
+        },
+        {
+          "id": "109",
+          "title": "《빛이 있으라》",
+          "hint": "등대원 아버지가 남긴 23권의 일지로 처음 만나는 성경 · 등불 시리즈 1 · 장편소설 웹 리더",
+          "href": "https://tinalinkeom.vercel.app/novel-b3",
+          "tab": "novel",
+          "book": "책 3. 등불 시리즈 1 · 빛이 있으라"
         },
         {
           "id": "103",

@@ -2122,16 +2122,6 @@
       "statusCode": 302
     },
     {
-      "source": "/105",
-      "destination": "https://tinalinkeom.vercel.app/novel?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n105",
-      "statusCode": 302
-    },
-    {
-      "source": "/n/105",
-      "destination": "https://tinalinkeom.vercel.app/novel?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n105",
-      "statusCode": 302
-    },
-    {
       "source": "/106",
       "destination": "https://tinalinkeom.vercel.app/novel2?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n106",
       "statusCode": 302
@@ -2163,14 +2153,6 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/novel",
-      "destination": "/api/novel"
-    },
-    {
-      "source": "/novel/",
-      "destination": "/api/novel"
-    },
     {
       "source": "/novel2",
       "destination": "/api/novel2"

@@ -1,20 +1,5 @@
-import { createHash, timingSafeEqual } from "node:crypto";
 import { TITLE, CHAPTERS } from "./_novel-b2-data.mjs";
 
-const PASSWORD = "8285";
-const COOKIE = "adem_auth";
-const TOKEN = createHash("sha256").update("adem-reader-v1:" + PASSWORD).digest("hex");
-
-function authed(req) {
-  const c = req.headers.cookie || "";
-  const m = c.match(new RegExp("(?:^|;\\s*)" + COOKIE + "=([a-f0-9]+)"));
-  if (!m || m[1].length !== TOKEN.length) return false;
-  return timingSafeEqual(Buffer.from(m[1]), Buffer.from(TOKEN));
-}
-async function readBody(req) {
-  if (req.body) return typeof req.body === "string" ? req.body : new URLSearchParams(req.body).toString();
-  let d = ""; for await (const ch of req) d += ch; return d;
-}
 const HEAD = `<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">`;
 
 function send(res, status, html) {
@@ -25,14 +10,6 @@ function send(res, status, html) {
   res.end(html);
 }
 
-function loginPage(err) {
-  return `<!doctype html><html lang="ko"><head>${HEAD}<title>잠긴 책</title><style>
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f4ecd8;font-family:'Noto Serif KR',serif;color:#3b2f22}
-form{background:#fffaf0;padding:2.2rem 2rem;border-radius:14px;box-shadow:0 6px 30px #0001;text-align:center;width:min(320px,86vw)}
-h1{font-size:1.15rem;margin:0 0 1.2rem}input{font:inherit;font-size:1.2rem;padding:.6rem;width:100%;box-sizing:border-box;border:1px solid #cbb994;border-radius:8px;text-align:center;letter-spacing:.3em;background:#fff}
-button{margin-top:1rem;font:inherit;padding:.6rem 1.4rem;border:0;border-radius:8px;background:#6b4f2a;color:#fff;cursor:pointer;width:100%}.e{color:#a33;font-size:.9rem;margin-top:.8rem}</style></head><body>
-<form method="post" action="/novel-b2"><h1>비밀번호를 입력하세요</h1><input type="password" name="password" inputmode="numeric" autocomplete="current-password" autofocus required><button>열기</button>${err ? '<div class="e">비밀번호가 맞지 않습니다.</div>' : ""}</form></body></html>`;
-}
 
 function readerPage() {
   const toc = CHAPTERS.map((c, i) => `<li><a href="#c${i}" data-i="${i}">${c.t}</a></li>`).join("");
@@ -100,21 +77,9 @@ show(start,0);
 setTimeout(function(){var h=document.documentElement.scrollHeight-innerHeight;window.scrollTo(0,pos*h);prog()},120);
 addEventListener('keydown',function(e){if(e.key==='ArrowRight')show(cur+1,0);if(e.key==='ArrowLeft')show(cur-1,0)});
 })();
-</script></body></html>`;
+</script><script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script><script defer src="/_vercel/insights/script.js"></script><script>(function(){var B="https://abacus.jasoncameron.dev/hit/tinalinkeom/",d=new Date(),day=d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);function once(sk,k){try{if(localStorage.getItem(sk)===day)return;localStorage.setItem(sk,day)}catch(e){}fetch(B+k).catch(function(){})}once("abacus:tinalinkeom:visits:day","visits");once("abacus:tinalinkeom:novel-b2:day","novel-b2")})();</script></body></html>`;
 }
 
 export default async function handler(req, res) {
-  if (req.method === "POST") {
-    const pw = new URLSearchParams(await readBody(req)).get("password") || "";
-    if (pw.trim() === PASSWORD) {
-      res.statusCode = 303;
-      res.setHeader("Set-Cookie", `${COOKIE}=${TOKEN}; Path=/; Max-Age=31536000; HttpOnly; Secure; SameSite=Lax`);
-      res.setHeader("Location", "/novel-b2");
-      res.setHeader("Cache-Control", "no-store");
-      return res.end();
-    }
-    return send(res, 401, loginPage(true));
-  }
-  if (!authed(req)) return send(res, 401, loginPage(false));
   return send(res, 200, readerPage());
 }

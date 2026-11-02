@@ -418,25 +418,17 @@
           "tab": "content"
         },
         {
-          "id": "105",
-          "title": "《Scacco d'Amore》 소설 (비밀번호)",
-          "hint": "사랑의 체크메이트 · 장편소설 웹 리더 🔒",
-          "href": "https://tinalinkeom.vercel.app/novel",
-          "tab": "novel",
-          "book": "책 1. Scacco d'Amore"
-        },
-        {
           "id": "106",
-          "title": "《Scacco d'Amore》 소설 버전 2 (비밀번호)",
-          "hint": "사랑의 체크메이트 · 장편소설 버전 2 웹 리더 🔒",
+          "title": "《Scacco d'Amore》 소설 버전 2",
+          "hint": "사랑의 체크메이트 · 장편소설 버전 2 웹 리더",
           "href": "https://tinalinkeom.vercel.app/novel2",
           "tab": "novel",
           "book": "책 1. Scacco d'Amore"
         },
         {
           "id": "107",
-          "title": "《아뎀: 숨의 노래》 (비밀번호)",
-          "hint": "귀를 잃어 가는 오르간 복원가와 1944년 오르간 속에 숨은 아이들 · 장편소설 웹 리더 🔒",
+          "title": "《아뎀: 숨의 노래》",
+          "hint": "귀를 잃어 가는 오르간 복원가와 1944년 오르간 속에 숨은 아이들 · 장편소설 웹 리더",
           "href": "https://tinalinkeom.vercel.app/novel-b2",
           "tab": "novel",
           "book": "책 2. 아뎀 — 숨의 노래"

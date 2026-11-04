@@ -687,6 +687,13 @@
           "hint": "영화로 만나는 실존 인물 · 하워드 휴즈 × 에비에이터",
           "href": "https://nadoo-people.vercel.app/",
           "tab": "content"
+        },
+        {
+          "id": "113",
+          "title": "쉽재성",
+          "hint": "쉽고 재미있는 성경이야기 · 66권 한 편씩 · 초등학생도 읽는 성경",
+          "href": "https://tinalinkeom.vercel.app/swjs",
+          "tab": "content"
         }
       ]
     },

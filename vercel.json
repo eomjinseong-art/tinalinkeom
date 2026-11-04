@@ -2190,6 +2190,16 @@
       "source": "/n/112",
       "destination": "https://tinalinkeom.vercel.app/novel-b5?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n112",
       "statusCode": 302
+    },
+    {
+      "source": "/113",
+      "destination": "https://tinalinkeom.vercel.app/swjs?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n113",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/113",
+      "destination": "https://tinalinkeom.vercel.app/swjs?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n113",
+      "statusCode": 302
     }
   ],
   "rewrites": [
@@ -2232,6 +2242,18 @@
     {
       "source": "/novel-b5/",
       "destination": "/api/novel-b5"
+    },
+    {
+      "source": "/swjs",
+      "destination": "/api/swjs"
+    },
+    {
+      "source": "/swjs/",
+      "destination": "/api/swjs"
+    },
+    {
+      "source": "/swjs/:n",
+      "destination": "/api/swjs?n=:n"
     },
     {
       "source": "/((?!guides/|api/).*)",

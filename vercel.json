@@ -2200,6 +2200,16 @@
       "source": "/n/113",
       "destination": "https://tinalinkeom.vercel.app/swjs?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n113",
       "statusCode": 302
+    },
+    {
+      "source": "/114",
+      "destination": "https://nadoo-perfume.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n114",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/114",
+      "destination": "https://nadoo-perfume.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n114",
+      "statusCode": 302
     }
   ],
   "rewrites": [

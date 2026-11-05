@@ -17,9 +17,13 @@ ol.toc a{display:block;padding:.7rem .8rem;background:var(--card);border:1px sol
 ol.toc small{color:var(--mut)}
 nav.pn{display:flex;gap:.5rem;margin-top:2.5rem}nav.pn a,nav.pn span{flex:1;text-align:center;padding:.85rem .4rem;border:1px solid var(--ln);border-radius:12px;background:var(--card);text-decoration:none;color:var(--fg);font-size:.85em;line-height:1.35}
 nav.pn span{opacity:.35}.top{font-size:.8em;color:var(--mut)}.top a{color:var(--mut)}
+p.rel{margin:1.35rem 0 0;padding:.75rem .95rem;background:var(--card);border:1px solid var(--ln);border-radius:12px;font-size:.82em;line-height:1.55;color:var(--mut)}
+p.rel a{font-weight:700;text-decoration:none}p.rel a:hover{text-decoration:underline}
 @media(max-width:480px){body{font-size:19px}}
 </style>`;
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const CHOSEN = "https://the-chosen-korean.vercel.app/";
+const chosenNote = `<p class="rel">예수님의 삶을 드라마로 따라가 보고 싶다면 <a href="${CHOSEN}" target="_blank" rel="noopener noreferrer">더 초즌</a> 한국어 가이드를 읽어 보세요.</p>`;
 const TAIL = `<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script><script defer src="/_vercel/insights/script.js"></script><script>(function(){var B="https://abacus.jasoncameron.dev/hit/tinalinkeom/",d=new Date(),day=d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);function once(sk,k){try{if(localStorage.getItem(sk)===day)return;localStorage.setItem(sk,day)}catch(e){}fetch(B+k).catch(function(){})}once("abacus:tinalinkeom:visits:day","visits");once("abacus:tinalinkeom:swjs:day","swjs")})();</script>`;
 
 function send(res, status, html) {
@@ -34,13 +38,14 @@ const item = (e) => `<li><a href="/swjs/${e.n}"><small>제${e.n}편</small><br><
 
 function index() {
   return page(SITE, `<h1>📖 ${SITE}</h1><p class="intro">성경 66권을 한 권에 한 편씩, 영화 줄거리처럼 쉽고 재미있게 풀어 쓴 이야기예요. 초등학생도 읽을 수 있어요. 창세기부터 요한계시록까지, 한 편씩 읽어 보세요!</p>
+${chosenNote}
 <h2>구약 39권</h2><ol class="toc">${EPS.slice(0, 39).map(item).join("")}</ol>
 <h2>신약 27권</h2><ol class="toc">${EPS.slice(39).map(item).join("")}</ol>`);
 }
 function episode(e) {
   const p = EPS[e.n - 2], n = EPS[e.n];
   const nav = `<nav class="pn">${p ? `<a href="/swjs/${p.n}">← 이전<br>${esc(p.b)}</a>` : `<span>← 이전</span>`}<a href="/swjs">☰ 목차</a>${n ? `<a href="/swjs/${n.n}">다음 →<br>${esc(n.b)}</a>` : `<span>다음 →</span>`}</nav>`;
-  return page(`${e.t} · 쉽재성`, `<div class="top"><a href="/swjs">쉽재성</a> · ${e.n <= 39 ? "구약" : "신약"} ${e.n}/66</div><h1>${esc(e.t)}</h1>${e.h}${nav}`);
+  return page(`${e.t} · 쉽재성`, `<div class="top"><a href="/swjs">쉽재성</a> · ${e.n <= 39 ? "구약" : "신약"} ${e.n}/66</div><h1>${esc(e.t)}</h1>${e.h}${nav}${chosenNote}`);
 }
 export default async function handler(req, res) {
   const raw = (req.query && req.query.n) || new URL(req.url, "http://x").searchParams.get("n");

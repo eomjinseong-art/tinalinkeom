@@ -193,7 +193,8 @@ img, svg { display: block; max-width: 100%; }
 }
 .name-btn { font-family: var(--serif); font-size: 28px; font-weight: 560; letter-spacing: -0.03em; line-height: 1.1; }
 .name-btn:hover, .alike-name:hover { color: var(--clay); }
-.ph { display: grid; place-items: center; min-height: 120px; color: var(--muted); font-size: 13px; }
+.ph[hidden] { display: none; }
+.ph:not([hidden]) { display: grid; place-items: center; min-height: 120px; color: var(--muted); font-size: 13px; }
 .detail {
   width: min(720px, calc(100% - 24px));
   border: 1px solid var(--line);

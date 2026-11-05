@@ -2212,6 +2212,26 @@
       "statusCode": 302
     },
     {
+      "source": "/115",
+      "destination": "https://tinalinkeom.vercel.app/denzel?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n115",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/115",
+      "destination": "https://tinalinkeom.vercel.app/denzel?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n115",
+      "statusCode": 302
+    },
+    {
+      "source": "/116",
+      "destination": "https://tinalinkeom.vercel.app/denzel?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n116",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/116",
+      "destination": "https://tinalinkeom.vercel.app/denzel?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n116",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302
@@ -2271,8 +2291,25 @@
       "destination": "/api/swjs?n=:n"
     },
     {
+      "source": "/denzel",
+      "destination": "/api/denzel"
+    },
+    {
+      "source": "/denzel/",
+      "destination": "/api/denzel"
+    },
+    {
+      "source": "/denzel/:n",
+      "destination": "/api/denzel?n=:n"
+    },
+    {
       "source": "/((?!guides/|api/|nadoo-perfume(?:/|$)).*)",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/denzel.mjs": {
+      "includeFiles": "content/denzel.md"
+    }
+  }
 }

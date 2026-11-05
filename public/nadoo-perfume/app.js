@@ -1,4 +1,4 @@
-import { PERFUMES, SEASONS, SITUATIONS, DISCLOSURE } from "./perfumes.js";
+import { DISCLOSURE, PERFUMES, SEASONS, SITUATIONS, coupangSearch, similarPerfumes } from "./perfumes.js";
 
 const $ = (sel, root = document) => root.querySelector(sel);
 const situationLabel = (id) => SITUATIONS.find((item) => item.id === id)?.label ?? id;
@@ -63,7 +63,7 @@ function recommend() {
     : `${situationLabel(query.situation)}, ${seasonLabel(query.season)}, ${query.tMin}–${query.tMax}°C에 맞춰 이 컬렉션에서 골랐습니다.`;
   $("#results").innerHTML = `<h3>이 컬렉션에서</h3><p class="source-note">${intro}</p>${top
     .map(
-      (item, index) => `<a class="result" href="#${item.perfume.id}">
+      (item, index) => `<a class="result" href="#d/${item.perfume.id}" data-open="${item.perfume.id}">
         <span class="rank">${index + 1}</span>
         <span><strong>${item.perfume.brandKo} ${item.perfume.nameKo}</strong><p>${item.reason}</p></span>
       </a>`,
@@ -76,6 +76,78 @@ function recommend() {
     if (mark) mark.hidden = hit < 0;
     if (mark && hit >= 0) mark.textContent = `추천 ${hit + 1}`;
   });
+}
+
+function esc(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;");
+}
+
+function openDetail(id) {
+  const perfume = PERFUMES.find((item) => item.id === id);
+  const dialog = $("#detail");
+  if (!perfume || !dialog) return;
+  const alike = similarPerfumes(id);
+  const photo = perfume.photo
+    ? `<img src="${esc(perfume.photo)}" alt="${esc(perfume.brand)} ${esc(perfume.name)} 병" onerror="this.hidden=true; if (this.nextElementSibling) this.nextElementSibling.hidden=false"><span class="ph" hidden>사진 없음</span>`
+    : `<span class="ph">사진 없음</span>`;
+  dialog.innerHTML = `<article class="detail-card">
+    <button type="button" class="detail-close" data-close>닫기</button>
+    <div class="detail-photo">${photo}<p class="credit">사진: ${esc(perfume.photoFrom || "없음")}</p></div>
+    <div>
+      <p class="card-kicker">${esc(perfume.brandKo)}</p>
+      <h2>${esc(perfume.name)}</h2>
+      <p class="ko">${esc(perfume.nameKo)} · ${esc(perfume.concentration)}</p>
+      <p class="character">${esc(perfume.character)}</p>
+      <p class="source-note">${esc(perfume.notesLabel)}</p>
+    </div>
+    <section class="alike" aria-labelledby="alike-title">
+      <h3 id="alike-title">비슷한 향수</h3>
+      <ul>
+        ${alike
+          .map((item) => {
+            const shop = coupangSearch(item.query);
+            return `<li>
+              <button type="button" class="alike-name" data-open="${esc(item.id)}">${esc(item.brand)} ${esc(item.name)}</button>
+              <a class="shop" href="${esc(shop)}" target="_blank" rel="sponsored nofollow noopener noreferrer">[광고] 쿠팡에서 검색</a>
+            </li>`;
+          })
+          .join("")}
+      </ul>
+      <p class="disclosure">${esc(DISCLOSURE)}</p>
+    </section>
+  </article>`;
+  if (!dialog.open) dialog.showModal();
+  if (location.hash !== `#d/${id}`) history.replaceState(null, "", `#d/${id}`);
+}
+
+function closeDetail() {
+  const dialog = $("#detail");
+  if (dialog?.open) dialog.close();
+  if (location.hash.startsWith("#d/")) history.replaceState(null, "", location.pathname + location.search);
+}
+
+function wireDetail() {
+  document.addEventListener("click", (event) => {
+    const opener = event.target.closest("[data-open]");
+    if (opener) {
+      event.preventDefault();
+      openDetail(opener.dataset.open);
+      return;
+    }
+    if (event.target.closest("[data-close]")) closeDetail();
+  });
+  $("#detail")?.addEventListener("click", (event) => {
+    if (event.target === $("#detail")) closeDetail();
+  });
+  $("#detail")?.addEventListener("close", () => {
+    if (location.hash.startsWith("#d/")) history.replaceState(null, "", location.pathname + location.search);
+  });
+  const hash = location.hash.match(/^#d\/([a-z0-9-]+)$/);
+  if (hash) openDetail(hash[1]);
 }
 
 function wire() {
@@ -131,4 +203,5 @@ document.querySelectorAll(".disclosure").forEach((node) => {
   if (!node.textContent.trim()) node.textContent = DISCLOSURE;
 });
 wire();
+wireDetail();
 visits();

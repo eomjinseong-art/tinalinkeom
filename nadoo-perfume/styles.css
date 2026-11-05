@@ -165,21 +165,54 @@ img, svg { display: block; max-width: 100%; }
   border-radius: 18px;
   padding: 16px 16px 14px;
   display: grid;
-  grid-template-columns: 92px 1fr;
+  grid-template-columns: 128px 1fr;
   gap: 14px;
   scroll-margin-top: 16px;
 }
 .card.is-pick { border-color: var(--gold); box-shadow: var(--shadow); }
 .bottle {
-  width: 92px;
-  height: 132px;
+  width: 128px;
+  min-height: 160px;
   border-radius: 14px;
-  background: linear-gradient(#f7f1e6, #efe4d2);
+  background: #fff;
   display: grid;
   place-items: center;
   border: 1px solid var(--line);
+  overflow: hidden;
 }
 .bottle svg { width: 58px; height: 108px; }
+.bottle img, .detail-photo img { width: 100%; height: 168px; object-fit: contain; background: #fff; }
+.open-detail, .name-btn, .alike-name, .detail-close {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: inherit;
+  padding: 0;
+}
+.name-btn { font-family: var(--serif); font-size: 28px; font-weight: 560; letter-spacing: -0.03em; line-height: 1.1; }
+.name-btn:hover, .alike-name:hover { color: var(--clay); }
+.ph { display: grid; place-items: center; min-height: 120px; color: var(--muted); font-size: 13px; }
+.detail {
+  width: min(720px, calc(100% - 24px));
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 0;
+  background: var(--card);
+  color: var(--ink);
+}
+.detail::backdrop { background: rgba(28, 25, 22, 0.45); }
+.detail-card { padding: 18px; display: grid; gap: 14px; }
+.detail-photo { background: #fff; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.detail-photo img { height: min(360px, 50vh); }
+.detail h2 { margin: 0; font-family: var(--serif); font-weight: 560; letter-spacing: -0.03em; }
+.detail-close { justify-self: end; border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; }
+.alike { border-top: 1px solid var(--line); padding-top: 12px; }
+.alike h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 26px; font-weight: 560; }
+.alike ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.alike li { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+.alike-name { font-weight: 700; }
 .pick-mark {
   margin-left: 6px;
   border-radius: 999px;
@@ -235,6 +268,8 @@ img, svg { display: block; max-width: 100%; }
 }
 @media (max-width: 640px) {
   .mast-inner, .card { grid-template-columns: 1fr; display: grid; }
+  .bottle { width: 100%; }
+  .bottle img { height: 220px; }
   .mast-inner { align-items: start; }
   .notes { grid-template-columns: 1fr; }
   .temp-row { grid-template-columns: 1fr; }

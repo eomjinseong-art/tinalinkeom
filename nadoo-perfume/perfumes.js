@@ -37,6 +37,8 @@ export function coupangSearch(query) {
 export const PERFUMES = [
   {
     id: "bleu-de-chanel",
+    photo: "img/bleu-de-chanel.jpg",
+    photoFrom: "Fragrantica",
     brand: "Chanel",
     brandKo: "샤넬",
     name: "Bleu de Chanel",
@@ -71,6 +73,8 @@ export const PERFUMES = [
   },
   {
     id: "hermes-h24",
+    photo: "img/hermes-h24.jpg",
+    photoFrom: "Fragrantica",
     brand: "Hermès",
     brandKo: "에르메스",
     name: "H24",
@@ -106,6 +110,8 @@ export const PERFUMES = [
   },
   {
     id: "voyage-dhermes",
+    photo: "img/voyage-dhermes.jpg",
+    photoFrom: "Fragrantica",
     brand: "Hermès",
     brandKo: "에르메스",
     name: "Voyage d'Hermès",
@@ -140,6 +146,8 @@ export const PERFUMES = [
   },
   {
     id: "montblanc-explorer",
+    photo: "img/montblanc-explorer.jpg",
+    photoFrom: "Fragrantica",
     brand: "Montblanc",
     brandKo: "몽블랑",
     name: "Explorer",
@@ -174,6 +182,8 @@ export const PERFUMES = [
   },
   {
     id: "cypress-grapevine",
+    photo: "img/cypress-grapevine.jpg",
+    photoFrom: "Fragrantica",
     brand: "Jo Malone London",
     brandKo: "조 말론 런던",
     name: "Cypress & Grapevine",
@@ -207,6 +217,8 @@ export const PERFUMES = [
   },
   {
     id: "luna-rossa-black",
+    photo: "img/luna-rossa-black.jpg",
+    photoFrom: "Fragrantica",
     brand: "Prada",
     brandKo: "프라다",
     name: "Luna Rossa Black",
@@ -241,6 +253,8 @@ export const PERFUMES = [
   },
   {
     id: "ysl-y",
+    photo: "img/ysl-y.jpg",
+    photoFrom: "Fragrantica",
     brand: "Yves Saint Laurent",
     brandKo: "입생로랑",
     name: "Y",
@@ -275,6 +289,8 @@ export const PERFUMES = [
   },
   {
     id: "eros-edp",
+    photo: "img/eros-edp.jpg",
+    photoFrom: "Fragrantica",
     brand: "Versace",
     brandKo: "베르사체",
     name: "Eros",
@@ -308,6 +324,8 @@ export const PERFUMES = [
   },
   {
     id: "eros-energy",
+    photo: "img/eros-energy.jpg",
+    photoFrom: "Fragrantica",
     brand: "Versace",
     brandKo: "베르사체",
     name: "Eros Energy",
@@ -341,6 +359,8 @@ export const PERFUMES = [
   },
   {
     id: "love-in-black",
+    photo: "img/love-in-black.jpg",
+    photoFrom: "Creed",
     brand: "Creed",
     brandKo: "크리드",
     name: "Love in Black",
@@ -375,6 +395,8 @@ export const PERFUMES = [
   },
   {
     id: "white-suede",
+    photo: "img/white-suede.jpg",
+    photoFrom: "Fragrantica",
     brand: "Tom Ford",
     brandKo: "톰 포드",
     name: "White Suede",
@@ -410,6 +432,8 @@ export const PERFUMES = [
   },
   {
     id: "oud-wood",
+    photo: "img/oud-wood.jpg",
+    photoFrom: "Fragrantica",
     brand: "Tom Ford",
     brandKo: "톰 포드",
     name: "Oud Wood",
@@ -443,6 +467,8 @@ export const PERFUMES = [
   },
   {
     id: "myrrhe-mystere",
+    photo: "img/myrrhe-mystere.png",
+    photoFrom: "Tom Ford Beauty",
     brand: "Tom Ford",
     brandKo: "톰 포드",
     name: "Myrrhe Mystère",
@@ -477,6 +503,8 @@ export const PERFUMES = [
   },
   {
     id: "tabacco-toscano",
+    photo: "img/tabacco-toscano.jpg",
+    photoFrom: "Santa Maria Novella",
     brand: "Santa Maria Novella",
     brandKo: "산타 마리아 노벨라",
     name: "Tabacco Toscano",
@@ -509,3 +537,25 @@ export const PERFUMES = [
     ],
   },
 ];
+
+export function similarPerfumes(id, limit = 4) {
+  const current = PERFUMES.find((item) => item.id === id);
+  if (!current) return [];
+  const notesOf = (item) => new Set([...(item.top || []), ...(item.heart || []), ...(item.base || []), ...(item.materials || [])]);
+  const wordsOf = (family) => new Set(family.split(/[·,\s]+/).filter((word) => word.length > 1));
+  const mine = notesOf(current);
+  const family = wordsOf(current.family);
+  return PERFUMES.filter((item) => item.id !== id)
+    .map((item) => {
+      let score = 0;
+      if (item.brand === current.brand) score += 6;
+      for (const note of notesOf(item)) if (mine.has(note)) score += 2;
+      for (const word of wordsOf(item.family)) if (family.has(word)) score += 3;
+      for (const situation of current.situations) if (item.situations.includes(situation)) score += 1;
+      for (const season of current.seasons) if (item.seasons.includes(season)) score += 1;
+      return { perfume: item, score };
+    })
+    .sort((a, b) => b.score - a.score || a.perfume.name.localeCompare(b.perfume.name))
+    .slice(0, limit)
+    .map((item) => item.perfume);
+}

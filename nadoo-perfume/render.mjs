@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync, writeFileSync } from "node:fs";
+import { cpSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -61,13 +61,19 @@ function notes(perfume) {
   </div>`;
 }
 
+function photo(perfume) {
+  const label = `${perfume.brand} ${perfume.name} 병`;
+  if (!perfume.photo) return bottle(perfume);
+  return `<img src="${esc(perfume.photo)}" alt="${esc(label)}" width="240" height="320" onerror="this.hidden=true; if (this.nextElementSibling) this.nextElementSibling.hidden=false"><span class="ph" hidden>사진 없음</span>`;
+}
+
 function card(perfume, index) {
   const shop = coupangSearch(perfume.query);
   return `<article class="card" id="${esc(perfume.id)}" data-id="${esc(perfume.id)}">
-    <div class="bottle">${bottle(perfume)}</div>
+    <div class="bottle"><button type="button" class="open-detail" data-open="${esc(perfume.id)}" aria-label="${esc(perfume.brand)} ${esc(perfume.name)} 자세히">${photo(perfume)}</button></div>
     <div class="card-body">
       <p class="card-kicker">${String(index + 1).padStart(2, "0")} · ${esc(perfume.brandKo)} <span class="pick-mark" hidden>추천</span></p>
-      <h3>${esc(perfume.name)}</h3>
+      <h3><button type="button" class="open-detail name-btn" data-open="${esc(perfume.id)}">${esc(perfume.name)}</button></h3>
       <p class="ko">${esc(perfume.nameKo)} · ${esc(perfume.concentration)}${perfume.year ? ` · ${esc(perfume.year)}` : ""}</p>
       <div class="meta"><span>${esc(perfume.family)}</span><span>${esc(perfume.when)}</span></div>
       <p class="character">${esc(perfume.character)}</p>
@@ -84,7 +90,7 @@ function card(perfume, index) {
         <p class="disclosure">${esc(DISCLOSURE)}</p>
       </div>
     </div>
-    <p class="credit">${esc(IMAGE_CREDIT)}</p>
+    <p class="credit">사진: ${esc(perfume.photoFrom || "없음")}</p>
   </article>`;
 }
 
@@ -185,7 +191,7 @@ const html = `<!DOCTYPE html>
     </form>
     <div class="catalog-head">
       <h2>열네 병</h2>
-      <p>노트는 각 카드의 출처를 따릅니다.</p>
+      <p>이름이나 사진을 누르면 자세히 봅니다.</p>
     </div>
     <div class="grid">
       ${PERFUMES.map(card).join("\n")}
@@ -205,6 +211,7 @@ const html = `<!DOCTYPE html>
     </nav>
     <p>추천은 이 목록 밖 향수를 가져오지 않습니다. 기온과 자리는 향의 성격으로 맞춘 제안입니다.</p>
   </footer>
+  <dialog id="detail" class="detail"></dialog>
   <script type="module" src="app.js"></script>
 </body>
 </html>
@@ -227,6 +234,7 @@ const published = join(dir, "../public/nadoo-perfume");
 mkdirSync(published, { recursive: true });
 for (const name of ["index.html", "app.js", "perfumes.js", "styles.css", "favicon.svg", "og.svg", "robots.txt", "sitemap.xml"]) {
   const from = name === "index.html" ? join(dir, "index.html") : join(dir, name);
-  copyFileSync(from, join(published, name));
+  cpSync(from, join(published, name));
 }
+cpSync(join(dir, "img"), join(published, "img"), { recursive: true });
 console.log(`wrote index.html (${PERFUMES.length} cards)`);

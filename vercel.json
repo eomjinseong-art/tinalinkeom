@@ -2203,12 +2203,17 @@
     },
     {
       "source": "/114",
-      "destination": "https://nadoo-perfume.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n114",
+      "destination": "https://tinalinkeom.vercel.app/nadoo-perfume/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n114",
       "statusCode": 302
     },
     {
       "source": "/n/114",
-      "destination": "https://nadoo-perfume.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n114",
+      "destination": "https://tinalinkeom.vercel.app/nadoo-perfume/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n114",
+      "statusCode": 302
+    },
+    {
+      "source": "/nadoo-perfume",
+      "destination": "/nadoo-perfume/",
       "statusCode": 302
     }
   ],
@@ -2266,7 +2271,7 @@
       "destination": "/api/swjs?n=:n"
     },
     {
-      "source": "/((?!guides/|api/).*)",
+      "source": "/((?!guides/|api/|nadoo-perfume(?:/|$)).*)",
       "destination": "/index.html"
     }
   ]

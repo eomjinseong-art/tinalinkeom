@@ -5,7 +5,8 @@
 // 리다이렉트되며 붙이는 계정 태그는 lptag=AF9731569 입니다.
 // 카드마다 검색 링크는 https://link.coupang.com/re/AFFSRP?lptag=AF9731569&pageKey=검색어
 
-export const SITE_URL = "https://nadoo-perfume.vercel.app";
+// Live page is served from the hub project until a separate Vercel project exists.
+export const SITE_URL = "https://tinalinkeom.vercel.app/nadoo-perfume";
 export const PARTNER_CODE = "hsdzLh1vB6";
 export const COUPANG_LPTAG = "AF9731569";
 export const COUPANG_HOME = `https://link.coupang.com/a/${PARTNER_CODE}`;

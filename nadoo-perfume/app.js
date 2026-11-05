@@ -98,11 +98,13 @@ function wire() {
 function visits() {
   const slot = $("#visits");
   if (!slot) return;
-  const hosts = ["nadoo-perfume.vercel.app"];
+  const ownHost = location.hostname === "nadoo-perfume.vercel.app";
+  const hubPath =
+    location.hostname === "tinalinkeom.vercel.app" && location.pathname.startsWith("/nadoo-perfume");
   const test =
     navigator.webdriver ||
     /headless|bot|crawler|spider|lighthouse/i.test(navigator.userAgent) ||
-    !hosts.includes(location.hostname);
+    !(ownHost || hubPath);
   const key = "nadoo-perfume-visit-day";
   const today = new Date().toLocaleDateString("en-CA");
   let last = null;

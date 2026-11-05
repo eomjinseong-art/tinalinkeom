@@ -43,7 +43,14 @@ assert(
   "Existing utm params must be left untouched",
 );
 
-const redirects = buildRedirects(links);
+const redirects = [
+  ...buildRedirects(links),
+  {
+    source: "/nadoo-perfume",
+    destination: "/nadoo-perfume/",
+    statusCode: 302,
+  },
+];
 const sources = new Set(redirects.map((row) => row.source));
 for (const link of links) {
   const n = Number(link.id);

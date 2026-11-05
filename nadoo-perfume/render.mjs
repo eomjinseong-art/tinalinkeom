@@ -1,4 +1,4 @@
-import { writeFileSync } from "node:fs";
+import { copyFileSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -127,12 +127,12 @@ const html = `<!DOCTYPE html>
   <meta property="og:locale" content="ko_KR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index,follow">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560&display=swap">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="styles.css">
   <script type="application/ld+json">${JSON.stringify(jsonLd)}</script>
 </head>
 <body>
@@ -205,7 +205,7 @@ const html = `<!DOCTYPE html>
     </nav>
     <p>추천은 이 목록 밖 향수를 가져오지 않습니다. 기온과 자리는 향의 성격으로 맞춘 제안입니다.</p>
   </footer>
-  <script type="module" src="/app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>
 `;
@@ -223,4 +223,10 @@ for (const perfume of PERFUMES) {
   }
 }
 writeFileSync(join(dir, "index.html"), html);
+const published = join(dir, "../public/nadoo-perfume");
+mkdirSync(published, { recursive: true });
+for (const name of ["index.html", "app.js", "perfumes.js", "styles.css", "favicon.svg", "og.svg", "robots.txt", "sitemap.xml"]) {
+  const from = name === "index.html" ? join(dir, "index.html") : join(dir, name);
+  copyFileSync(from, join(published, name));
+}
 console.log(`wrote index.html (${PERFUMES.length} cards)`);

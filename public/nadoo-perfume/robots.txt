@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tinalinkeom.vercel.app/nadoo-perfume/sitemap.xml

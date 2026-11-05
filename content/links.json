@@ -701,6 +701,20 @@
           "hint": "향수 14병 · 노트·계절·기온으로 이 컬렉션 안에서만 고르는 추천",
           "href": "https://tinalinkeom.vercel.app/nadoo-perfume/",
           "tab": "content"
+        },
+        {
+          "id": "115",
+          "title": "덴젤 워싱턴",
+          "hint": "신앙, 절제, 그리고 연기 · 공개된 사실과 인터뷰·작품 맥락으로 쓴 한국어 전기",
+          "href": "https://tinalinkeom.vercel.app/denzel",
+          "tab": "content"
+        },
+        {
+          "id": "116",
+          "title": "덴젤 워싱턴",
+          "hint": "신앙, 절제, 그리고 연기 · 공개된 사실과 인터뷰·작품 맥락으로 쓴 한국어 전기",
+          "href": "https://tinalinkeom.vercel.app/denzel",
+          "tab": "movie"
         }
       ]
     },

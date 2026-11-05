@@ -127,11 +127,13 @@ const vercelPath = resolve(root, "vercel.json");
 const current = JSON.parse(normalizeNewlines(readFileSync(vercelPath, "utf8"))) as {
   $schema?: string;
   rewrites?: unknown;
+  functions?: unknown;
 };
 const next = {
   $schema: current.$schema,
   redirects,
   rewrites: current.rewrites,
+  ...(current.functions ? { functions: current.functions } : {}),
 };
 const text = `${JSON.stringify(next, null, 2)}\n`;
 const existingVercel = readFileSync(vercelPath, "utf8");

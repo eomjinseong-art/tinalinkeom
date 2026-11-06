@@ -20,6 +20,7 @@ nav.pn span{opacity:.35}.top{font-size:.8em;color:var(--mut)}.top a{color:var(--
 p.rel{margin:1.35rem 0 0;padding:.75rem .95rem;background:var(--card);border:1px solid var(--ln);border-radius:12px;font-size:.82em;line-height:1.55;color:var(--mut)}
 p.rel a{font-weight:700;text-decoration:none}p.rel a:hover{text-decoration:underline}
 @media(max-width:480px){body{font-size:19px}}
+.verses{margin-top:2.5rem;padding:1.2rem 1rem;background:var(--card);border:1px solid var(--ln);border-radius:14px}.verses h2{margin-top:0}.verses .intro{color:var(--mut);font-size:.85em}.verses blockquote{font-size:.95em}.verses blockquote small{color:var(--mut);font-size:.8em}
 </style>`;
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const CHOSEN = "https://the-chosen-korean.vercel.app/";
@@ -45,7 +46,7 @@ ${chosenNote}
 function episode(e) {
   const p = EPS[e.n - 2], n = EPS[e.n];
   const nav = `<nav class="pn">${p ? `<a href="/swjs/${p.n}">← 이전<br>${esc(p.b)}</a>` : `<span>← 이전</span>`}<a href="/swjs">☰ 목차</a>${n ? `<a href="/swjs/${n.n}">다음 →<br>${esc(n.b)}</a>` : `<span>다음 →</span>`}</nav>`;
-  return page(`${e.t} · 쉽재성`, `<div class="top"><a href="/swjs">쉽재성</a> · ${e.n <= 39 ? "구약" : "신약"} ${e.n}/66</div><h1>${esc(e.t)}</h1>${e.h}${nav}${chosenNote}`);
+  return page(`${e.t} · 쉽재성`, `<div class="top"><a href="/swjs">쉽재성</a> · ${e.n <= 39 ? "구약" : "신약"} ${e.n}/66</div><h1>${esc(e.t)}</h1>${e.h}${e.v || ""}${nav}${chosenNote}`);
 }
 export default async function handler(req, res) {
   const raw = (req.query && req.query.n) || new URL(req.url, "http://x").searchParams.get("n");

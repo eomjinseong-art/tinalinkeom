@@ -481,6 +481,14 @@
           "book": "책 7. 등불 시리즈 5 · 새를 세는 아침"
         },
         {
+          "id": "119",
+          "title": "《네 번째 차례》",
+          "hint": "부산의 보드게임 탁자에서 함께 이기는 법보다 함께 노는 법을 배우는 이야기 · 등불 시리즈 6 · 장편소설 웹 리더",
+          "href": "https://tinalinkeom.vercel.app/novel-b8",
+          "tab": "novel",
+          "book": "책 8. 등불 시리즈 6 · 네 번째 차례"
+        },
+        {
           "id": "103",
           "title": "나두 모터스 공방 🔧",
           "hint": "브레이크·시동·과열 고장 진단 & 4행정 엔진 조립 · Car repair & engine simulator",

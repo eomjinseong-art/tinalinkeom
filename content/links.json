@@ -465,6 +465,14 @@
           "book": "책 5. 등불 시리즈 3 · 누룩"
         },
         {
+          "id": "117",
+          "title": "《안쪽 주머니》",
+          "hint": "퇴사한 콘텐츠 디자이너가 동네 수선실에서 다시 배우는 일과 사람의 자리 · 등불 시리즈 4 · 장편소설 웹 리더",
+          "href": "https://tinalinkeom.vercel.app/novel-b6",
+          "tab": "novel",
+          "book": "책 6. 등불 시리즈 4 · 안쪽 주머니"
+        },
+        {
           "id": "103",
           "title": "나두 모터스 공방 🔧",
           "hint": "브레이크·시동·과열 고장 진단 & 4행정 엔진 조립 · Car repair & engine simulator",

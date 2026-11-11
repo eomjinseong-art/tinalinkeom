@@ -473,6 +473,14 @@
           "book": "책 6. 등불 시리즈 4 · 안쪽 주머니"
         },
         {
+          "id": "118",
+          "title": "《새를 세는 아침》",
+          "hint": "갑천의 새를 세며 불확실한 내일과 작은 희망을 배우는 이야기 · 등불 시리즈 5 · 장편소설 웹 리더",
+          "href": "https://tinalinkeom.vercel.app/novel-b7",
+          "tab": "novel",
+          "book": "책 7. 등불 시리즈 5 · 새를 세는 아침"
+        },
+        {
           "id": "103",
           "title": "나두 모터스 공방 🔧",
           "hint": "브레이크·시동·과열 고장 진단 & 4행정 엔진 조립 · Car repair & engine simulator",

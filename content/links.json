@@ -771,6 +771,20 @@
           "hint": "신앙, 절제, 그리고 연기 · 공개된 사실과 인터뷰·작품 맥락으로 쓴 한국어 전기",
           "href": "https://tinalinkeom.vercel.app/denzel",
           "tab": "movie"
+        },
+        {
+          "id": "124",
+          "title": "키아누 리브스",
+          "hint": "상실, 친절, 그리고 질주 · 공개된 사실과 인터뷰·작품 맥락으로 쓴 한국어 전기",
+          "href": "https://tinalinkeom.vercel.app/keanu",
+          "tab": "content"
+        },
+        {
+          "id": "125",
+          "title": "키아누 리브스",
+          "hint": "상실, 친절, 그리고 질주 · 공개된 사실과 인터뷰·작품 맥락으로 쓴 한국어 전기",
+          "href": "https://tinalinkeom.vercel.app/keanu",
+          "tab": "movie"
         }
       ]
     },

@@ -2302,6 +2302,26 @@
       "statusCode": 302
     },
     {
+      "source": "/124",
+      "destination": "https://tinalinkeom.vercel.app/keanu?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n124",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/124",
+      "destination": "https://tinalinkeom.vercel.app/keanu?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n124",
+      "statusCode": 302
+    },
+    {
+      "source": "/125",
+      "destination": "https://tinalinkeom.vercel.app/keanu?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n125",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/125",
+      "destination": "https://tinalinkeom.vercel.app/keanu?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n125",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302
@@ -2429,6 +2449,18 @@
       "destination": "/api/denzel?n=:n"
     },
     {
+      "source": "/keanu",
+      "destination": "/api/keanu"
+    },
+    {
+      "source": "/keanu/",
+      "destination": "/api/keanu"
+    },
+    {
+      "source": "/keanu/:n",
+      "destination": "/api/keanu?n=:n"
+    },
+    {
       "source": "/((?!guides/|api/|nadoo-perfume(?:/|$)).*)",
       "destination": "/index.html"
     }
@@ -2436,6 +2468,9 @@
   "functions": {
     "api/denzel.mjs": {
       "includeFiles": "content/denzel.md"
+    },
+    "api/keanu.mjs": {
+      "includeFiles": "content/keanu.md"
     }
   }
 }

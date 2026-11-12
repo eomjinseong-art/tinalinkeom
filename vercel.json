@@ -2282,6 +2282,16 @@
       "statusCode": 302
     },
     {
+      "source": "/122",
+      "destination": "https://tinalinkeom.vercel.app/novel-b11?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n122",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/122",
+      "destination": "https://tinalinkeom.vercel.app/novel-b11?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n122",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302
@@ -2367,6 +2377,14 @@
     {
       "source": "/novel-b10/",
       "destination": "/api/novel-b10"
+    },
+    {
+      "source": "/novel-b11",
+      "destination": "/api/novel-b11"
+    },
+    {
+      "source": "/novel-b11/",
+      "destination": "/api/novel-b11"
     },
     {
       "source": "/swjs",

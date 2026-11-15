@@ -249,6 +249,13 @@
           "tab": "movie"
         },
         {
+          "id": "126",
+          "title": "타잔 아카이브",
+          "hint": "타잔 영화 49편 시대별 정리 + 역대 타잔·제인 배우",
+          "href": "https://tarzan-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
           "id": "47",
           "title": "고양이 용품",
           "hint": "숨숨마을 고양이 용품 큐레이션",

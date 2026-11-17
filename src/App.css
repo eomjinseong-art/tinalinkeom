@@ -628,6 +628,80 @@ body {
   word-break: keep-all;
 }
 
+.coupang-card {
+  width: 100%;
+  margin: 1.15rem 0 0;
+}
+
+.coupang-card-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 3.25rem;
+  margin: 0;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(180deg, #fff7f2 0%, #fffdfb 100%);
+  border: 1px solid rgba(196, 92, 74, 0.34);
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(196, 92, 74, 0.08);
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease;
+}
+
+.coupang-card-link:hover,
+.coupang-card-link:focus-visible {
+  transform: translateY(-2px);
+  background: #fff;
+  border-color: rgba(196, 92, 74, 0.38);
+  box-shadow: 0 10px 22px rgba(72, 42, 56, 0.1);
+  text-decoration: none;
+}
+
+.coupang-card-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.coupang-card-label {
+  flex: 0 0 auto;
+  min-width: 1.7rem;
+  margin-top: 0.12rem;
+  padding: 0.12rem 0.34rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(196, 92, 74, 0.28);
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.coupang-card-notice {
+  margin: 0.45rem 0.1rem 0;
+  color: #8a8293;
+  font-size: 0.68rem;
+  line-height: 1.5;
+  text-align: left;
+  word-break: keep-all;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coupang-card-link,
+  .coupang-card-link:hover,
+  .coupang-card-link:focus-visible {
+    transition: none;
+    transform: none;
+  }
+}
+
 /* 나두 패밀리 accordion — tab buttons follow the ebook download-btn look, one colour per tab. */
 .hub-accordion {
   display: flex;

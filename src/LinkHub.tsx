@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { hubLinkByNumber, hubSections } from "./linkCatalog";
 import { parseLinkNumber } from "./shortLinks";
 import { HubAccordion } from "./HubAccordion";
+import { CoupangCard } from "./CoupangCard";
 import { SiteLinkCard } from "./SiteLinkCard";
 
 const MISSING_NUMBER = "없는 번호입니다.";
@@ -145,6 +146,7 @@ export function LinkHub() {
           </Fragment>
         ))}
       </div>
+      <CoupangCard />
     </>
   );
 }

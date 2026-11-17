@@ -28,7 +28,7 @@ table{width:100%;border-collapse:collapse;font-size:.82em;margin:0 0 1em}th,td{b
 const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 const MOVIE = "https://movie-checklist-sigma.vercel.app/";
 const PEOPLE = "https://nadoo-people.vercel.app/";
-const relatedNote = `<p class="rel"><a href="${MOVIE}" target="_blank" rel="noopener noreferrer">영화 체크리스트</a>에서 출연작을 체크하고, <a href="${PEOPLE}" target="_blank" rel="noopener noreferrer">나두인물</a>에서 다른 인물 이야기도 읽어 보세요.</p>`;
+const relatedNote = `<p class="rel"><a href="${MOVIE}" target="_blank" rel="noopener noreferrer">영화 체크리스트</a>에서 출연작을 체크하고, <a href="${PEOPLE}" target="_blank" rel="noopener noreferrer">나두인물</a>에서 다른 인물 이야기도 읽어 보세요. 존 윅 시리즈의 작품·차량·세계관은 <a href="https://johnwick-archive.vercel.app/?utm_source=tinalink&utm_medium=keanu&utm_campaign=archive-network" target="_blank" rel="noopener noreferrer">존 윅 아카이브</a>에 정리했어요.</p>`;
 const TAIL = `<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments)};</script><script defer src="/_vercel/insights/script.js"></script><script>(function(){var B="https://abacus.jasoncameron.dev/hit/tinalinkeom/",d=new Date(),day=d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2);function once(sk,k){try{if(localStorage.getItem(sk)===day)return;localStorage.setItem(sk,day)}catch(e){}fetch(B+k).catch(function(){})}once("abacus:tinalinkeom:visits:day","visits");once("abacus:tinalinkeom:keanu:day","keanu")})();</script>`;
 
 function inline(raw) {

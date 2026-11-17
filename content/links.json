@@ -263,6 +263,13 @@
           "tab": "movie"
         },
         {
+          "id": "129",
+          "title": "존 윅 아카이브",
+          "hint": "존 윅 4편 + 발레리나·더 콘티넨탈 · 영화 속 차량 25대 · 세계관",
+          "href": "https://johnwick-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
           "id": "47",
           "title": "고양이 용품",
           "hint": "숨숨마을 고양이 용품 큐레이션",

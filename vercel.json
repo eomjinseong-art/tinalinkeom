@@ -2352,6 +2352,16 @@
       "statusCode": 302
     },
     {
+      "source": "/129",
+      "destination": "https://johnwick-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n129",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/129",
+      "destination": "https://johnwick-archive.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n129",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302

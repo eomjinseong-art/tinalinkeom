@@ -270,6 +270,13 @@
           "tab": "movie"
         },
         {
+          "id": "130",
+          "title": "건 아카이브",
+          "hint": "영화 속 권총 33종 · 더티 해리 매그넘부터 존 윅 핏 바이퍼까지 · 영화 78편",
+          "href": "https://gun-archive.vercel.app/",
+          "tab": "movie"
+        },
+        {
           "id": "47",
           "title": "고양이 용품",
           "hint": "숨숨마을 고양이 용품 큐레이션",

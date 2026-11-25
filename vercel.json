@@ -2392,6 +2392,16 @@
       "statusCode": 302
     },
     {
+      "source": "/133",
+      "destination": "https://apple-compare-note.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n133",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/133",
+      "destination": "https://apple-compare-note.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n133",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302

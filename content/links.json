@@ -620,6 +620,13 @@
           "tab": "shopping"
         },
         {
+          "id": "133",
+          "title": "애플 비교노트",
+          "hint": "아이폰·아이패드·맥·에어팟 모델별 사양 비교 + 나한테 맞는 모델 고르기",
+          "href": "https://apple-compare-note.vercel.app/",
+          "tab": "shopping"
+        },
+        {
           "id": "56",
           "title": "나두 Ai",
           "hint": "티스토리",

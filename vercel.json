@@ -2372,6 +2372,16 @@
       "statusCode": 302
     },
     {
+      "source": "/131",
+      "destination": "https://longrent-guide.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n131",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/131",
+      "destination": "https://longrent-guide.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n131",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302

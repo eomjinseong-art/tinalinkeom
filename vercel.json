@@ -2382,6 +2382,16 @@
       "statusCode": 302
     },
     {
+      "source": "/132",
+      "destination": "https://senior-care-note.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n132",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/132",
+      "destination": "https://senior-care-note.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n132",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302

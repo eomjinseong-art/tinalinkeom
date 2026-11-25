@@ -2539,7 +2539,7 @@
       "destination": "/api/keanu?n=:n"
     },
     {
-      "source": "/((?!guides/|api/|nadoo-perfume(?:/|$)).*)",
+      "source": "/((?!guides/|api/|nadoo-perfume(?:/|$)|robots\\.txt$|sitemap\\.xml$|og\\.png$).*)",
       "destination": "/index.html"
     }
   ],

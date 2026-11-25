@@ -193,13 +193,6 @@
           "tab": "car"
         },
         {
-          "id": "131",
-          "title": "장기렌트 비교노트",
-          "hint": "인기 신차 24종 장기렌트·리스·할부 비교 + 월 비용 계산기",
-          "href": "https://longrent-guide.vercel.app/",
-          "tab": "car"
-        },
-        {
           "id": "128",
           "title": "나두카&모터사이클",
           "hint": "운영자와 함께했던 차량 22대·바이크 11대",
@@ -592,13 +585,6 @@
           "tab": "content"
         },
         {
-          "id": "132",
-          "title": "시니어 정리·돌봄 노트",
-          "hint": "특수청소·유품정리·요양원 입소 후 집 정리·철거 + 병원 동행 매니저·노인돌봄 생활지원사",
-          "href": "https://senior-care-note.vercel.app/",
-          "tab": "content"
-        },
-        {
           "id": "94",
           "title": "나두원피스",
           "hint": "동블루에서 에그헤드까지, 아크로 읽는 원피스 · 인물·관계·명대사·악마의 열매·현상금 · One Piece arc guide 🏴‍☠️",
@@ -617,6 +603,20 @@
           "title": "그날의 남녀",
           "hint": "커플 솔루션 마켓",
           "href": "https://a-couple-score-cpang.vercel.app/",
+          "tab": "shopping"
+        },
+        {
+          "id": "131",
+          "title": "장기렌트 비교노트",
+          "hint": "인기 신차 24종 장기렌트·리스·할부 비교 + 월 비용 계산기",
+          "href": "https://longrent-guide.vercel.app/",
+          "tab": "shopping"
+        },
+        {
+          "id": "132",
+          "title": "시니어 정리·돌봄 노트",
+          "hint": "특수청소·유품정리·요양원 입소 후 집 정리·철거 + 병원 동행 매니저·노인돌봄 생활지원사",
+          "href": "https://senior-care-note.vercel.app/",
           "tab": "shopping"
         },
         {

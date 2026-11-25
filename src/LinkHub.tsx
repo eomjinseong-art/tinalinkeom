@@ -146,6 +146,7 @@ export function LinkHub() {
           </Fragment>
         ))}
       </div>
+      <div className="nadoo-ad" data-types="apple" />
       <CoupangCard />
     </>
   );

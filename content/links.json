@@ -592,6 +592,13 @@
           "tab": "content"
         },
         {
+          "id": "132",
+          "title": "시니어 정리·돌봄 노트",
+          "hint": "특수청소·유품정리·요양원 입소 후 집 정리·철거 + 병원 동행 매니저·노인돌봄 생활지원사",
+          "href": "https://senior-care-note.vercel.app/",
+          "tab": "content"
+        },
+        {
           "id": "94",
           "title": "나두원피스",
           "hint": "동블루에서 에그헤드까지, 아크로 읽는 원피스 · 인물·관계·명대사·악마의 열매·현상금 · One Piece arc guide 🏴‍☠️",

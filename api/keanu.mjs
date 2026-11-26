@@ -158,7 +158,16 @@ function send(res, status, html) {
   res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
   res.end(html);
 }
-const page = (title, body) => `<!doctype html><html lang="ko"><head>${HEAD}<title>${esc(title)}</title>${CSS}</head><body><main>${body}</main>${TAIL}</body></html>`;
+const AD = `<div class="nadoo-ad"></div>`;
+// 첫 섹션 뒤: 첫 소제목 앞, 없으면 세 번째 문단 뒤에 광고 1개.
+function withMidAd(html) {
+  const h = html.search(/<h[23][\s>]/);
+  if (h > 0) return html.slice(0, h) + AD + html.slice(h);
+  let at = -1;
+  for (let i = 0; i < 3; i++) { at = html.indexOf("</p>", at + 1); if (at < 0) return html + AD; }
+  return html.slice(0, at + 4) + AD + html.slice(at + 4);
+}
+const page = (title, body) => `<!doctype html><html lang="ko"><head>${HEAD}<title>${esc(title)}</title>${CSS}</head><body><main>${body}</main>${TAIL}<script src="https://nadoo-ads.vercel.app/ads.js" defer></script></body></html>`;
 const item = (e) => {
   const sub = e.sub ? `<br><small>${esc(e.sub)}</small>` : "";
   return `<li><a href="/keanu/${e.n}"><small>제${e.n}편 · ${esc(e.label)}</small><br><strong>${esc(e.name)}</strong>${sub}</a></li>`;
@@ -171,13 +180,15 @@ function index() {
   const back = EPS.filter((e) => e.label !== "서문" && !/^\d+장$/.test(e.label));
   return page(`${SITE} · ${BOOK.subtitle}`, `<h1>📖 ${SITE}</h1><p class="intro">${esc(BOOK.subtitle)}</p>
 ${BOOK.intro}
+${AD}
 ${relatedNote}
-${toc(front, "서문")}${toc(body, `본문 ${body.length}장`)}${toc(back, "에필로그 · 부록")}`);
+${toc(front, "서문")}${toc(body, `본문 ${body.length}장`)}${toc(back, "에필로그 · 부록")}
+${AD}`);
 }
 function episode(e) {
   const p = EPS[e.n - 2], n = EPS[e.n];
   const nav = `<nav class="pn">${p ? `<a href="/keanu/${p.n}">← 이전<br>${esc(p.name)}</a>` : `<span>← 이전</span>`}<a href="/keanu">☰ 목차</a>${n ? `<a href="/keanu/${n.n}">다음 →<br>${esc(n.name)}</a>` : `<span>다음 →</span>`}</nav>`;
-  return page(`${e.heading} · ${SITE}`, `<div class="top"><a href="/keanu">${SITE}</a> · ${e.n}/${EPS.length}</div><h1>${esc(e.heading)}</h1>${e.h}${nav}${relatedNote}`);
+  return page(`${e.heading} · ${SITE}`, `<div class="top"><a href="/keanu">${SITE}</a> · ${e.n}/${EPS.length}</div><h1>${esc(e.heading)}</h1>${withMidAd(e.h)}${AD}${nav}${relatedNote}`);
 }
 export default async function handler(req, res) {
   const raw = (req.query && req.query.n) || new URL(req.url || "/", "http://x").searchParams.get("n");

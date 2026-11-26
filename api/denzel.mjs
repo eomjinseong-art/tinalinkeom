@@ -159,12 +159,13 @@ function send(res, status, html) {
   res.end(html);
 }
 const AD = `<div class="nadoo-ad"></div>`;
-// 첫 섹션 뒤: 첫 소제목 앞, 없으면 세 번째 문단 뒤에 광고 1개.
+// 첫 섹션 뒤: 첫 소제목 앞, 없으면 세 번째 문단 뒤에 광고 1개(표만 있는 장처럼 경계가 없으면 생략).
 function withMidAd(html) {
   const h = html.search(/<h[23][\s>]/);
   if (h > 0) return html.slice(0, h) + AD + html.slice(h);
   let at = -1;
-  for (let i = 0; i < 3; i++) { at = html.indexOf("</p>", at + 1); if (at < 0) return html + AD; }
+  for (let i = 0; i < 3; i++) { at = html.indexOf("</p>", at + 1); if (at < 0) return html; }
+  if (html.indexOf("</p>", at + 4) < 0) return html; // 뒤에 본문이 없으면 글 끝 칸과 붙으니 생략
   return html.slice(0, at + 4) + AD + html.slice(at + 4);
 }
 const page = (title, body) => `<!doctype html><html lang="ko"><head>${HEAD}<title>${esc(title)}</title>${CSS}</head><body><main>${body}</main>${TAIL}<script src="https://nadoo-ads.vercel.app/ads.js" defer></script></body></html>`;

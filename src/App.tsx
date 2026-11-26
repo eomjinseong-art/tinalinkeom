@@ -189,6 +189,7 @@ function SiteFooter() {
         <span aria-hidden="true">·</span>
         <a href="/admin/index.html">Admin</a>
       </nav>
+      <div className="nadoo-ad-bar" />
     </footer>
   );
 }

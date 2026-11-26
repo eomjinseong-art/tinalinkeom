@@ -627,6 +627,13 @@
           "tab": "shopping"
         },
         {
+          "id": "134",
+          "title": "이사 견적 노트",
+          "hint": "이사·입주청소 견적 체크리스트, 비교 요령, 요청서 쓰는 법",
+          "href": "https://moving-quote-guide.vercel.app/",
+          "tab": "shopping"
+        },
+        {
           "id": "56",
           "title": "나두 Ai",
           "hint": "티스토리",

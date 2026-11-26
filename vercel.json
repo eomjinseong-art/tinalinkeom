@@ -2402,6 +2402,16 @@
       "statusCode": 302
     },
     {
+      "source": "/134",
+      "destination": "https://moving-quote-guide.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n134",
+      "statusCode": 302
+    },
+    {
+      "source": "/n/134",
+      "destination": "https://moving-quote-guide.vercel.app/?utm_source=tinalink&utm_medium=shortlink&utm_campaign=n134",
+      "statusCode": 302
+    },
+    {
       "source": "/nadoo-perfume",
       "destination": "/nadoo-perfume/",
       "statusCode": 302
